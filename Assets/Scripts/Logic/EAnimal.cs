@@ -8,13 +8,13 @@ public enum EAnimal
 {
     Cow,
     Dog,
-    Elephant,
-    Lamb,
-    Lion,
-    Mokey,
-    Parrot,
-    Pig,
-    Rhinoceros,
-    Tiger
+    // Elephant,
+    // Lamb,
+    // Lion,
+    // Mokey,
+    // Parrot,
+    // Pig,
+    // Rhinoceros,
+    // Tiger
 }
 
