@@ -2,14 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class VisualController_2D : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI m_AnimalText;
+    [SerializeField] Image m_AnimalSprite;
+    [SerializeField] Animal2DDictionary m_Animal2DDictionary = new();
+
     private GameLogic m_GameLogic = new();
 
-    // Start is called before the first frame update
     void Start()
     {
         m_GameLogic.OnNewAnimalAppears += OnNewAnimalAppears;
@@ -18,6 +24,14 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnGameWon += OnGameWon;
 
         m_GameLogic.StartGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 
     private void OnDestroy()
@@ -38,20 +52,24 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.DeclineAnimal();
     }
 
-    private void OnNewAnimalAppears(EGender gender, EAnimal species)
+    private void OnNewAnimalAppears(AnimalData animal)
     {
-        Debug.Log($"New animal: {gender} {species}");
+        m_AnimalText.text = $"{animal.Gender} {animal.AnimalType}";
+
+        Animal2D currentAnimal = m_Animal2DDictionary[animal];
+        Sprite currentAnimalSprite = currentAnimal.Sprite;
+        m_AnimalSprite.sprite = currentAnimalSprite;
     }
 
-    private void OnAnimalCorrect(EGender gender, EAnimal species)
+    private void OnAnimalCorrect(AnimalData animal)
     {
-        Debug.Log($"New animal on board: {gender} {species}");
+        Debug.Log($"New animal on board: {animal.Gender} {animal.AnimalType}");
     }
 
-    private void OnGameOver(EGender gender, EAnimal species)
+    private void OnGameOver(AnimalData animal)
     {
         // TODO: implement game over
-        Debug.Log($"{gender} {species} was already on board - you sink.");
+        Debug.Log($"{animal.Gender} {animal.AnimalType} was already on board - you sink.");
     }
 
     private void OnGameWon()

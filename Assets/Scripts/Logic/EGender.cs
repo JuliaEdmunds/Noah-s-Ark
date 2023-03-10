@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+[Serializable]
 public enum EGender
 {
     Male,

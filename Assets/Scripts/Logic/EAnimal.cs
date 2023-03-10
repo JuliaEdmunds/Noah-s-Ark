@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+[Serializable]
 public enum EAnimal
 {
-    Cow,
-    Dog,
-    // Elephant,
-    // Lamb,
-    // Lion,
-    // Mokey,
-    // Parrot,
-    // Pig,
-    // Rhinoceros,
-    // Tiger
+    Bear,
+    Boar,
+    Deer,
+    Fox,
+    Moose,
+    Raccoon,
+    Tiger,
+    Wolf
 }
 

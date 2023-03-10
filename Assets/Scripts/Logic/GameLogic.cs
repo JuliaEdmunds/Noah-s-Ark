@@ -6,17 +6,17 @@ using UnityEngine;
 public class GameLogic
 {
     // Game over, game won should also be events
-    public event Action<EGender, EAnimal> OnNewAnimalAppears;
+    public event Action<AnimalData> OnNewAnimalAppears;
 
-    public event Action<EGender, EAnimal> OnAnimalCorrect;
+    public event Action<AnimalData> OnAnimalCorrect;
 
-    public event Action<EGender, EAnimal> OnGameOver;
+    public event Action<AnimalData> OnGameOver;
 
     public event Action OnGameWon;
 
-    private HashSet<KeyValuePair<EGender, EAnimal>> m_AnimalsOnBoard;
+    private HashSet<AnimalData> m_AnimalsOnBoard;
 
-    private KeyValuePair<EGender, EAnimal> m_CurrentAnimal;
+    private AnimalData m_CurrentAnimal;
 
     private int m_NumAnimalsToCollect;
     private Array m_AnimalValues;
@@ -41,9 +41,9 @@ public class GameLogic
         EAnimal randomAnimal = (EAnimal)m_AnimalValues.GetValue(random.Next(m_AnimalValues.Length));
         EGender randomGender = (EGender)m_GenderValues.GetValue(random.Next(m_GenderValues.Length));
 
-        m_CurrentAnimal = KeyValuePair.Create(randomGender, randomAnimal);
+        m_CurrentAnimal = new AnimalData(randomGender, randomAnimal);
 
-        OnNewAnimalAppears(randomGender, randomAnimal);
+        OnNewAnimalAppears(m_CurrentAnimal);
     }
 
     public void AcceptAnimal()
@@ -53,7 +53,7 @@ public class GameLogic
         if (IsAnimalCorrect(m_CurrentAnimal))
         {
             m_AnimalsOnBoard.Add(m_CurrentAnimal);
-            OnAnimalCorrect(m_CurrentAnimal.Key, m_CurrentAnimal.Value);
+            OnAnimalCorrect(m_CurrentAnimal);
 
             if (m_AnimalsOnBoard.Count == m_NumAnimalsToCollect)
             {
@@ -72,14 +72,14 @@ public class GameLogic
         PickNewAnimal();
     }
 
-    private bool IsAnimalCorrect(KeyValuePair<EGender, EAnimal> animal)
+    private bool IsAnimalCorrect(AnimalData animal)
     {
         if (m_AnimalsOnBoard.Contains(animal))
         {
-            OnGameOver(animal.Key, animal.Value);
+            OnGameOver(animal);
             return false;
         }
-
+            
         return true;
     }
 }
