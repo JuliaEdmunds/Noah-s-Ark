@@ -15,6 +15,7 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] Animal2DDictionary m_Animal2DDictionary = new();
 
     private GameLogic m_GameLogic = new();
+    public EDifficulty m_Difficulty;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnAnimalCorrect += OnAnimalCorrect;
         m_GameLogic.OnGameWon += OnGameWon;
 
-        m_GameLogic.StartGame();
+        m_GameLogic.StartGame(m_Difficulty);
     }
 
     private void Update()
@@ -31,6 +32,7 @@ public class VisualController_2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("Main");
+            Debug.Log("New game");
         }
     }
 
