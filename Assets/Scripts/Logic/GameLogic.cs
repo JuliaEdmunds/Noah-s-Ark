@@ -36,27 +36,26 @@ public class GameLogic
         {
             default:
             case EDifficulty.Easy:
-                m_NumAnimalTypes = 3;
+                m_NumAnimalTypes = (int)EDifficulty.Easy;
                 m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
                 break;
             case EDifficulty.Medium:
-                m_NumAnimalTypes = 5;
+                m_NumAnimalTypes = (int)EDifficulty.Medium;
                 m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
                 break;
             case EDifficulty.Hard:
-                m_NumAnimalTypes = 8;
+                m_NumAnimalTypes = (int)EDifficulty.Hard;
                 m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
                 break;
         }
 
         System.Random rnd = new();
-        m_AnimalTypesInGame = (List<EAnimal>)m_AnimalTypesInGame.OrderBy(item => rnd.Next());
+        m_AnimalTypesInGame = m_AnimalTypesInGame.OrderBy(item => rnd.Next()).ToList();
 
         while (m_AnimalTypesInGame.Count > m_NumAnimalTypes)
         {
             m_AnimalTypesInGame.RemoveAt(0);
         }
-
 
         PickNewAnimal();
     }

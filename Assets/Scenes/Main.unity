@@ -1075,6 +1075,7 @@ MonoBehaviour:
     - m_AnimalSprite: {fileID: 21300000, guid: 78be534f0fa4c4b449629a5ab5559f8c, type: 3}
     - m_AnimalSprite: {fileID: 21300000, guid: f08282143a63bf242a8363a59ebacdbd, type: 3}
     - m_AnimalSprite: {fileID: 21300000, guid: 7c3263a1d9a4e4441a733c756cfcb876, type: 3}
+  m_Difficulty: 0
 --- !u!4 &1599999724
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,7 +1309,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1946333525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1599999723}
+        m_TargetAssemblyTypeName: VisualController_2D, Assembly-CSharp
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1946333525
 MonoBehaviour:
   m_ObjectHideFlags: 0

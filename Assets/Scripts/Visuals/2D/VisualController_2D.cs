@@ -24,7 +24,7 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnAnimalCorrect += OnAnimalCorrect;
         m_GameLogic.OnGameWon += OnGameWon;
 
-        m_GameLogic.StartGame(m_Difficulty);
+        m_GameLogic.StartGame(GameSettings.Difficulty);
     }
 
     private void Update()
@@ -78,5 +78,10 @@ public class VisualController_2D : MonoBehaviour
     {
         // TODO: implement game won
         Debug.Log($"All animals on board.");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
