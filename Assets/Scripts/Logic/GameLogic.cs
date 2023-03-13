@@ -72,7 +72,7 @@ public class GameLogic
 
         m_CurrentAnimal = new AnimalData(randomGender, randomAnimal);
 
-        if (m_LastAnimal.Gender == m_CurrentAnimal.Gender && m_LastAnimal.AnimalType == m_CurrentAnimal.AnimalType)
+        if (m_LastAnimal == m_CurrentAnimal)
         {
             PickNewAnimal();
         }
