@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,9 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_AnimalText;
     [SerializeField] Image m_AnimalSprite;
     [SerializeField] Animal2DDictionary m_Animal2DDictionary = new();
+    [SerializeField] GameObject m_GameOnButtons;
+    [SerializeField] GameObject m_GameOverScreen;
+    [SerializeField] private TextMeshProUGUI m_GameOverText;
 
     private GameLogic m_GameLogic = new();
     public EDifficulty m_Difficulty;
@@ -70,18 +74,37 @@ public class VisualController_2D : MonoBehaviour
 
     private void OnGameOver(AnimalData animal)
     {
-        // TODO: implement game over
-        Debug.Log($"{animal.Gender} {animal.AnimalType} was already on board - you sink.");
+        m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
+        m_GameOnButtons.SetActive(false);
+        m_GameOverScreen.SetActive(true);
     }
 
     private void OnGameWon()
     {
         // TODO: implement game won
         Debug.Log($"All animals on board.");
+
+        m_GameOverText.text = "All animals on board. Congrats!";
+        m_GameOnButtons.SetActive(false);
+        m_GameOverScreen.SetActive(true);
     }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit(); 
+#endif
     }
 }
