@@ -88,7 +88,8 @@ public class VisualController_2D : MonoBehaviour
         for (int i = 0; i < animalsOnBoard.Count; i++)
         {
             AnimalData currentAnimal = animalsOnBoard[i];
-            allAnimals += currentAnimal + " ";
+
+            allAnimals += $"{i + 1}. {currentAnimal.Gender} {currentAnimal.AnimalType}; ";
         }
 
         Debug.Log($"{allAnimals}");
