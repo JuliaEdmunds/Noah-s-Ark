@@ -17,6 +17,8 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] GameObject m_GameOnButtons;
     [SerializeField] GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
+    [SerializeField] private TextMeshProUGUI m_LifelineText;
+    [SerializeField] private Button m_LifelineButton;
 
     private GameLogic m_GameLogic = new();
     public EDifficulty m_Difficulty;
@@ -27,6 +29,7 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnGameOver += OnGameOver;
         m_GameLogic.OnAnimalCorrect += OnAnimalCorrect;
         m_GameLogic.OnGameWon += OnGameWon;
+        m_GameLogic.ShowAnimalsOnBoard += ShowAnimalsOnBoard;
 
         m_GameLogic.StartGame(GameSettings.Difficulty);
     }
@@ -58,6 +61,13 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.DeclineAnimal();
     }
 
+    public void GetHelp()
+    {
+        m_GameLogic.GetHelp();
+        m_LifelineButton.interactable = false;
+        m_LifelineText.text = "Lifeline (none left)";
+    }
+
     private void OnNewAnimalAppears(AnimalData animal)
     {
         m_AnimalText.text = $"{animal.Gender} {animal.AnimalType}";
@@ -70,6 +80,18 @@ public class VisualController_2D : MonoBehaviour
     private void OnAnimalCorrect(AnimalData animal)
     {
         Debug.Log($"New animal on board: {animal.Gender} {animal.AnimalType}");
+    }
+
+    private void ShowAnimalsOnBoard(List<AnimalData> animalsOnBoard)
+    {
+        string allAnimals = "";
+        for (int i = 0; i < animalsOnBoard.Count; i++)
+        {
+            AnimalData currentAnimal = animalsOnBoard[i];
+            allAnimals += currentAnimal + " ";
+        }
+
+        Debug.Log($"{allAnimals}");
     }
 
     private void OnGameOver(AnimalData animal)

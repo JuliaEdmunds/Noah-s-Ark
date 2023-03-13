@@ -13,6 +13,7 @@ public class GameLogic
     public event Action<AnimalData> OnAnimalCorrect;
     public event Action<AnimalData> OnGameOver;
     public event Action OnGameWon;
+    public event Action<List<AnimalData>> ShowAnimalsOnBoard;
 
     private HashSet<AnimalData> m_AnimalsOnBoard;
 
@@ -80,6 +81,12 @@ public class GameLogic
             m_LastAnimal = m_CurrentAnimal;
             OnNewAnimalAppears(m_CurrentAnimal);
         }
+    }
+
+    public void GetHelp()
+    {
+        List<AnimalData> animalsOnBoardList = m_AnimalsOnBoard.ToList();
+        ShowAnimalsOnBoard(animalsOnBoardList);
     }
 
     public void AcceptAnimal()
