@@ -17,6 +17,7 @@ public class GameLogic
     private HashSet<AnimalData> m_AnimalsOnBoard;
 
     private AnimalData m_CurrentAnimal;
+    private AnimalData m_LastAnimal;
 
     private int m_NumAnimalsToCollect;
     private Array m_GenderValues;
@@ -70,7 +71,15 @@ public class GameLogic
 
         m_CurrentAnimal = new AnimalData(randomGender, randomAnimal);
 
-        OnNewAnimalAppears(m_CurrentAnimal);
+        if (m_LastAnimal.Gender == m_CurrentAnimal.Gender && m_LastAnimal.AnimalType == m_CurrentAnimal.AnimalType)
+        {
+            PickNewAnimal();
+        }
+        else
+        {
+            m_LastAnimal = m_CurrentAnimal;
+            OnNewAnimalAppears(m_CurrentAnimal);
+        }
     }
 
     public void AcceptAnimal()
