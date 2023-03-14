@@ -19,6 +19,7 @@ public struct AnimalData
         AnimalType = species;
     }
 
+    // Overrides in a struct to ensure equality operates properly
     public override bool Equals(object obj)
     {
         if (!(obj is AnimalData mys)) // type pattern here

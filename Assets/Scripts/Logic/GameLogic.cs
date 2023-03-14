@@ -13,7 +13,7 @@ public class GameLogic
     public event Action<AnimalData> OnAnimalCorrect;
     public event Action<AnimalData> OnGameOver;
     public event Action OnGameWon;
-    public event Action<List<AnimalData>> ShowAnimalsOnBoard;
+    // public event Action ShowAnimalsOnBoard;
 
     private HashSet<AnimalData> m_AnimalsOnBoard;
 
@@ -24,6 +24,7 @@ public class GameLogic
     private Array m_GenderValues;
     private int m_NumAnimalTypes;
     private List<EAnimal> m_AnimalTypesInGame;
+    public IReadOnlyList<EAnimal> AnimalTypesInGame => m_AnimalTypesInGame;
 
     public void StartGame(EDifficulty difficulty)
     {
@@ -34,22 +35,8 @@ public class GameLogic
         m_AnimalTypesInGame.AddRange(Enum.GetValues(typeof(EAnimal)));
         m_GenderValues = Enum.GetValues(typeof(EGender));
 
-        switch (difficulty)
-        {
-            default:
-            case EDifficulty.Easy:
-                m_NumAnimalTypes = (int)EDifficulty.Easy;
-                m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
-                break;
-            case EDifficulty.Medium:
-                m_NumAnimalTypes = (int)EDifficulty.Medium;
-                m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
-                break;
-            case EDifficulty.Hard:
-                m_NumAnimalTypes = (int)EDifficulty.Hard;
-                m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
-                break;
-        }
+        m_NumAnimalTypes = (int)difficulty;
+        m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
 
         System.Random rnd = new();
         m_AnimalTypesInGame = m_AnimalTypesInGame.OrderBy(item => rnd.Next()).ToList();
@@ -83,11 +70,11 @@ public class GameLogic
         }
     }
 
-    public void GetHelp()
-    {
-        List<AnimalData> animalsOnBoardList = m_AnimalsOnBoard.ToList();
-        ShowAnimalsOnBoard(animalsOnBoardList);
-    }
+   // public void GetHelp()
+   // {
+   //     List<AnimalData> animalsOnBoardList = m_AnimalsOnBoard.ToList();
+   //     ShowAnimalsOnBoard(animalsOnBoardList);
+   // }
 
     public void AcceptAnimal()
     {
@@ -107,7 +94,7 @@ public class GameLogic
             {
                 PickNewAnimal();
             }
-        }  
+        }
     }
 
     public void DeclineAnimal()
@@ -124,7 +111,7 @@ public class GameLogic
             OnGameOver(animal);
             return false;
         }
-            
+
         return true;
     }
 }

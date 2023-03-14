@@ -11,17 +11,21 @@ using UnityEngine.UI;
 
 public class VisualController_2D : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_AnimalText;
+    [SerializeField, Header("Animal")] private TextMeshProUGUI m_AnimalText;
     [SerializeField] Image m_AnimalSprite;
     [SerializeField] Animal2DDictionary m_Animal2DDictionary = new();
-    [SerializeField] GameObject m_GameOnButtons;
+    [SerializeField, Header("Game State")] GameObject m_GameOnButtons;
     [SerializeField] GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
-    [SerializeField] private TextMeshProUGUI m_LifelineText;
+    [SerializeField, Header("Lifeline")] private TextMeshProUGUI m_LifelineText;
     [SerializeField] private Button m_LifelineButton;
+    [SerializeField] private GameObject m_AnimalsOnBoardScreen;
+    [SerializeField] private List<AnimalSlotsUI> m_AnimalPairsList;
 
     private GameLogic m_GameLogic = new();
     public EDifficulty m_Difficulty;
+
+    private Dictionary<EAnimal, AnimalSlotsUI> m_AnimalPairsDict = new();
 
     void Start()
     {
@@ -29,17 +33,33 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnGameOver += OnGameOver;
         m_GameLogic.OnAnimalCorrect += OnAnimalCorrect;
         m_GameLogic.OnGameWon += OnGameWon;
-        m_GameLogic.ShowAnimalsOnBoard += ShowAnimalsOnBoard;
+        // m_GameLogic.ShowAnimalsOnBoard += ShowAnimalsOnBoard;
 
         m_GameLogic.StartGame(GameSettings.Difficulty);
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
+        // Generate slots for animals in game
+        IReadOnlyList<EAnimal> animalsInGame = m_GameLogic.AnimalTypesInGame;
+        int numAnimalsInGame = animalsInGame.Count;
+
+        for (int i = 0; i < m_AnimalPairsList.Count; i++)
         {
-            SceneManager.LoadScene("Main");
-            Debug.Log("New game");
+            AnimalSlotsUI currentPair = m_AnimalPairsList[i];
+
+            if (i < numAnimalsInGame)
+            {
+                EAnimal currentType = animalsInGame[i];
+                AnimalData currentTypeMale = new AnimalData(EGender.Male, currentType);
+                AnimalData currentTypeFemale = new AnimalData(EGender.Female, currentType);
+                Sprite male = m_Animal2DDictionary[currentTypeMale].Sprite;
+                Sprite female = m_Animal2DDictionary[currentTypeFemale].Sprite;
+                currentPair.Init(male, female);
+
+                m_AnimalPairsDict.Add(currentType, currentPair);
+            }
+            else
+            {
+                currentPair.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -49,6 +69,7 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnAnimalCorrect -= OnAnimalCorrect;
         m_GameLogic.OnGameWon -= OnGameWon;
         m_GameLogic.OnGameOver -= OnGameOver;
+        // m_GameLogic.ShowAnimalsOnBoard -= ShowAnimalsOnBoard;
     }
 
     public void AcceptAnimal()
@@ -63,9 +84,9 @@ public class VisualController_2D : MonoBehaviour
 
     public void GetHelp()
     {
-        m_GameLogic.GetHelp();
         m_LifelineButton.interactable = false;
         m_LifelineText.text = "Lifeline (none left)";
+        StartCoroutine(ShowAnimalsOnBoard());
     }
 
     private void OnNewAnimalAppears(AnimalData animal)
@@ -79,20 +100,16 @@ public class VisualController_2D : MonoBehaviour
 
     private void OnAnimalCorrect(AnimalData animal)
     {
-        Debug.Log($"New animal on board: {animal.Gender} {animal.AnimalType}");
+        AnimalSlotsUI animalSlot = m_AnimalPairsDict[animal.AnimalType];
+
+        animalSlot.BoardedAnimal(animal.Gender);
     }
 
-    private void ShowAnimalsOnBoard(List<AnimalData> animalsOnBoard)
+    private IEnumerator ShowAnimalsOnBoard()
     {
-        string allAnimals = "";
-        for (int i = 0; i < animalsOnBoard.Count; i++)
-        {
-            AnimalData currentAnimal = animalsOnBoard[i];
-
-            allAnimals += $"{i + 1}. {currentAnimal.Gender} {currentAnimal.AnimalType}; ";
-        }
-
-        Debug.Log($"{allAnimals}");
+        m_AnimalsOnBoardScreen.SetActive(true);
+        yield return new WaitForSeconds(5);
+        m_AnimalsOnBoardScreen.SetActive(false);
     }
 
     private void OnGameOver(AnimalData animal)
@@ -100,16 +117,15 @@ public class VisualController_2D : MonoBehaviour
         m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
         m_GameOnButtons.SetActive(false);
         m_GameOverScreen.SetActive(true);
+        m_AnimalsOnBoardScreen.SetActive(true);
     }
 
     private void OnGameWon()
     {
-        // TODO: implement game won
-        Debug.Log($"All animals on board.");
-
         m_GameOverText.text = "All animals on board. Congrats!";
         m_GameOnButtons.SetActive(false);
         m_GameOverScreen.SetActive(true);
+        m_AnimalsOnBoardScreen.SetActive(true);
     }
 
     public void BackToMenu()
