@@ -7,4 +7,8 @@ using System.Threading.Tasks;
 public static class GameSettings
 {
     public static EDifficulty Difficulty = EDifficulty.Easy;
+
+    public static int NumAnimals = 2;
+
+    public static int NumLifelines = 0;
 }

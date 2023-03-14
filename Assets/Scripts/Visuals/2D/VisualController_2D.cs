@@ -108,8 +108,12 @@ public class VisualController_2D : MonoBehaviour
     private IEnumerator ShowAnimalsOnBoard()
     {
         m_AnimalsOnBoardScreen.SetActive(true);
+        m_GameOnButtons.SetActive(false);
+
         yield return new WaitForSeconds(5);
+
         m_AnimalsOnBoardScreen.SetActive(false);
+        m_GameOnButtons.SetActive(true);
     }
 
     private void OnGameOver(AnimalData animal)
