@@ -25,7 +25,7 @@ public class MenuController : MonoBehaviour
         GameSettings.NumAnimals = (int)value;
 
         m_NumAnimalsText.text = value.ToString();
-        
+
         Debug.Log("Num animals changed");
     }
 
@@ -65,7 +65,14 @@ public class MenuController : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(1);
+        if (GameSettings.GameMode == EGameMode._2D)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void QuitGame()
