@@ -8,10 +8,12 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private Slider m_NumAnimals;
+    [SerializeField, Header("Sliders")] private Slider m_NumAnimals;
     [SerializeField] private Slider m_NumLifelines;
     [SerializeField] private TextMeshProUGUI m_NumAnimalsText;
     [SerializeField] private TextMeshProUGUI m_NumLifelinesText;
+    [SerializeField, Header("Game Mode")] private Toggle m_2DToggle;
+    [SerializeField] private Toggle m_3DToggle;
 
     private void Start()
     {
@@ -41,7 +43,25 @@ public class MenuController : MonoBehaviour
         m_NumAnimals.value = GameSettings.NumAnimals;
 
         m_NumLifelines.value = GameSettings.NumLifelines;
+
+        if (GameSettings.GameMode == EGameMode._2D)
+        {
+            m_2DToggle.isOn = true;
+        }
+        else
+        {
+            m_3DToggle.isOn = true;
+        }
     }
+
+    private void SetGameMode(EGameMode gameMode)
+    {
+        GameSettings.GameMode = gameMode;
+    }
+
+    public void Set2DGameMode() => SetGameMode(EGameMode._2D);
+
+    public void Set3DGameMode() => SetGameMode(EGameMode._3D);
 
     public void LoadGame()
     {

@@ -9,4 +9,6 @@ public static class GameSettings
     public static int NumAnimals = 2;
 
     public static int NumLifelines = 0;
+
+    public static EGameMode GameMode = EGameMode._2D;
 }
