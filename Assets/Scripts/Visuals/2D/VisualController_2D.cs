@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -23,9 +24,8 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] private List<AnimalSlotsUI> m_AnimalPairsList;
 
     private GameLogic m_GameLogic = new();
-    public EDifficulty m_Difficulty;
-
     private Dictionary<EAnimal, AnimalSlotsUI> m_AnimalPairsDict = new();
+    private int m_NumLifelinesLeft;
 
     void Start()
     {
@@ -33,9 +33,17 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnGameOver += OnGameOver;
         m_GameLogic.OnAnimalCorrect += OnAnimalCorrect;
         m_GameLogic.OnGameWon += OnGameWon;
-        // m_GameLogic.ShowAnimalsOnBoard += ShowAnimalsOnBoard;
 
-        m_GameLogic.StartGame(GameSettings.Difficulty);
+        m_GameLogic.StartGame(GameSettings.NumAnimals, GameSettings.NumLifelines);
+
+        m_NumLifelinesLeft = GameSettings.NumLifelines;
+
+        if (m_NumLifelinesLeft < 1)
+        {
+            m_LifelineButton.interactable = false;
+        }
+
+        ShowNumLifelines();
 
         // Generate slots for animals in game
         IReadOnlyList<EAnimal> animalsInGame = m_GameLogic.AnimalTypesInGame;
@@ -48,8 +56,8 @@ public class VisualController_2D : MonoBehaviour
             if (i < numAnimalsInGame)
             {
                 EAnimal currentType = animalsInGame[i];
-                AnimalData currentTypeMale = new AnimalData(EGender.Male, currentType);
-                AnimalData currentTypeFemale = new AnimalData(EGender.Female, currentType);
+                AnimalData currentTypeMale = new(EGender.Male, currentType);
+                AnimalData currentTypeFemale = new(EGender.Female, currentType);
                 Sprite male = m_Animal2DDictionary[currentTypeMale].Sprite;
                 Sprite female = m_Animal2DDictionary[currentTypeFemale].Sprite;
                 currentPair.Init(male, female);
@@ -69,7 +77,6 @@ public class VisualController_2D : MonoBehaviour
         m_GameLogic.OnAnimalCorrect -= OnAnimalCorrect;
         m_GameLogic.OnGameWon -= OnGameWon;
         m_GameLogic.OnGameOver -= OnGameOver;
-        // m_GameLogic.ShowAnimalsOnBoard -= ShowAnimalsOnBoard;
     }
 
     public void AcceptAnimal()
@@ -84,8 +91,15 @@ public class VisualController_2D : MonoBehaviour
 
     public void GetHelp()
     {
-        m_LifelineButton.interactable = false;
-        m_LifelineText.text = "Lifeline (none left)";
+        if (m_NumLifelinesLeft < 1)
+        {
+            return;
+        }
+
+        m_NumLifelinesLeft--;
+
+        ShowNumLifelines();
+
         StartCoroutine(ShowAnimalsOnBoard());
     }
 
@@ -122,6 +136,23 @@ public class VisualController_2D : MonoBehaviour
         m_GameOnButtons.SetActive(false);
         m_GameOverScreen.SetActive(true);
         m_AnimalsOnBoardScreen.SetActive(true);
+    }
+
+    private void ShowNumLifelines()
+    {
+        if (m_NumLifelinesLeft < 1)
+        {
+            m_LifelineButton.interactable = false;
+            m_LifelineText.text = "No lifelines";
+        }
+        else if (m_NumLifelinesLeft == 1)
+        {
+            m_LifelineText.text = $"{m_NumLifelinesLeft} lifeline available";
+        }
+        else
+        {
+            m_LifelineText.text = $"{m_NumLifelinesLeft} lifelines available";
+        }
     }
 
     private void OnGameWon()

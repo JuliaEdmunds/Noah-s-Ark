@@ -13,7 +13,6 @@ public class GameLogic
     public event Action<AnimalData> OnAnimalCorrect;
     public event Action<AnimalData> OnGameOver;
     public event Action OnGameWon;
-    // public event Action ShowAnimalsOnBoard;
 
     private HashSet<AnimalData> m_AnimalsOnBoard;
 
@@ -26,7 +25,7 @@ public class GameLogic
     private List<EAnimal> m_AnimalTypesInGame;
     public IReadOnlyList<EAnimal> AnimalTypesInGame => m_AnimalTypesInGame;
 
-    public void StartGame(EDifficulty difficulty)
+    public void StartGame(int numAnimals, int numLifelines)
     {
         // Needs to initilize the data it's looking for (hashset)
         m_AnimalsOnBoard = new();
@@ -35,7 +34,7 @@ public class GameLogic
         m_AnimalTypesInGame.AddRange(Enum.GetValues(typeof(EAnimal)));
         m_GenderValues = Enum.GetValues(typeof(EGender));
 
-        m_NumAnimalTypes = (int)difficulty;
+        m_NumAnimalTypes = numAnimals;
         m_NumAnimalsToCollect = m_NumAnimalTypes * m_GenderValues.Length;
 
         System.Random rnd = new();
@@ -69,12 +68,6 @@ public class GameLogic
             OnNewAnimalAppears(m_CurrentAnimal);
         }
     }
-
-   // public void GetHelp()
-   // {
-   //     List<AnimalData> animalsOnBoardList = m_AnimalsOnBoard.ToList();
-   //     ShowAnimalsOnBoard(animalsOnBoardList);
-   // }
 
     public void AcceptAnimal()
     {

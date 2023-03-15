@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,25 +8,40 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private Button easyButton;
-    [SerializeField] private Button mediumButton;
-    [SerializeField] private Button hardButton;
+    [SerializeField] private Slider m_NumAnimals;
+    [SerializeField] private Slider m_NumLifelines;
+    [SerializeField] private TextMeshProUGUI m_NumAnimalsText;
+    [SerializeField] private TextMeshProUGUI m_NumLifelinesText;
 
     private void Start()
     {
         LoadDifficulty();
     }
 
-    private void SetDifficulty(EDifficulty difficulty)
+    public void OnAnimalSliderChanged(float value)
     {
-        GameSettings.Difficulty = difficulty;
+        GameSettings.NumAnimals = (int)value;
+
+        m_NumAnimalsText.text = value.ToString();
+        
+        Debug.Log("Num animals changed");
     }
 
-    public void SetDifficultyEasy() => SetDifficulty(EDifficulty.Easy);
+    public void OnLifelineSliderChanged(float value)
+    {
+        GameSettings.NumLifelines = (int)value;
 
-    public void SetDifficultyMedium() => SetDifficulty(EDifficulty.Medium);
+        m_NumLifelinesText.text = value.ToString();
 
-    public void SetDifficultyHard() => SetDifficulty(EDifficulty.Hard);
+        Debug.Log("Num lifelines changed");
+    }
+
+    private void LoadDifficulty()
+    {
+        m_NumAnimals.value = GameSettings.NumAnimals;
+
+        m_NumLifelines.value = GameSettings.NumLifelines;
+    }
 
     public void LoadGame()
     {
@@ -39,22 +55,5 @@ public class MenuController : MonoBehaviour
 #else
         Application.Quit(); 
 #endif
-    }
-
-    private void LoadDifficulty()
-    {
-        switch (GameSettings.Difficulty) 
-        {
-            default:
-            case EDifficulty.Easy:
-                easyButton.Select();
-                break;
-            case EDifficulty.Medium:
-                mediumButton.Select(); 
-                break;
-            case EDifficulty.Hard: 
-                hardButton.Select();
-                break;
-        }
     }
 }
