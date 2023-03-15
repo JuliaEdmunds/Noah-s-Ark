@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d1094d53ab2cd45916d7fa92c9c601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AnimalPrefab: {fileID: 4581019166330022999}
 --- !u!1 &8542203716327429198
 GameObject:
   m_ObjectHideFlags: 0

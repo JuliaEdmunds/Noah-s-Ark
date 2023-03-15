@@ -12,6 +12,9 @@ using UnityEngine.UI;
 
 public class VisualController_3D : MonoBehaviour
 {
+    [SerializeField] private GameObject m_Forest;
+    [SerializeField] private GameObject m_Ship;
+
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
 
@@ -27,7 +30,7 @@ public class VisualController_3D : MonoBehaviour
         m_NumLifelinesLeft = GameSettings.NumLifelines;  
     }
 
-    private void ODestroy()
+    private void OnDestroy()
     {
         m_GameLogic.OnNewAnimalAppears -= OnNewAnimalAppears;
         m_GameLogic.OnAnimalCorrect -= OnAnimalCorrect;

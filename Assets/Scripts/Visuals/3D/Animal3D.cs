@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Animal3D : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject m_AnimalPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Common pattern to protect against setting serialized data
+    // use short => instead of get { ... }
+    public GameObject AnimalPrefab => m_AnimalPrefab;
 }
