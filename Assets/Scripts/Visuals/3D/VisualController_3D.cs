@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using TMPro;
@@ -22,6 +23,11 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField] private GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
 
+    [SerializeField, Header("Lifeline")] private GameObject m_AnimalsOnBoardScreen;
+    [SerializeField] private Animal3DDictionary m_AllAnimalsOnBoard;
+    [SerializeField] private GameObject m_Lifeline;
+    [SerializeField] private TextMeshProUGUI m_LifelineText;
+
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
     private GameObject m_CurrentAnimal;
@@ -35,7 +41,19 @@ public class VisualController_3D : MonoBehaviour
 
         m_GameLogic.StartGame(GameSettings.NumAnimals, GameSettings.NumLifelines);
 
-        m_NumLifelinesLeft = GameSettings.NumLifelines;  
+
+        // TODO: Find a 3D HELP sign and place it at the front of the screen + fix the postiion of the liflines on screen
+        m_NumLifelinesLeft = GameSettings.NumLifelines;
+
+        if (m_NumLifelinesLeft < 1)
+        {
+            m_Lifeline.SetActive(false);
+            m_LifelineText.text = null;
+        }
+        else
+        {
+            m_LifelineText.text = $"{m_NumLifelinesLeft}";
+        }
     }
 
     private void OnDestroy()
@@ -60,7 +78,22 @@ public class VisualController_3D : MonoBehaviour
 
     public void GetHelp()
     {
+        if (m_NumLifelinesLeft < 1)
+        {
+            m_Lifeline.SetActive(false);
+            m_LifelineText.text = null;
+            return;
+        }
 
+        m_NumLifelinesLeft--;
+        m_LifelineText.text = $"{m_NumLifelinesLeft}";
+        StartCoroutine(ShowAnimalsOnBoard());
+
+        if (m_NumLifelinesLeft < 1)
+        {
+            m_Lifeline.SetActive(false);
+            m_LifelineText.text = null;
+        }
     }
 
     private void OnNewAnimalAppears(AnimalData animal)
@@ -69,8 +102,9 @@ public class VisualController_3D : MonoBehaviour
     }
 
     private void OnAnimalCorrect(AnimalData animal)
-    { 
-
+    {
+        GameObject currentAnimal = m_AllAnimalsOnBoard[animal].AnimalPrefab;
+        currentAnimal.SetActive(true);
     }
 
     private void OnGameOver(AnimalData animal)
@@ -105,6 +139,15 @@ public class VisualController_3D : MonoBehaviour
         m_AnimalText.gameObject.SetActive(false);
         yield return new WaitForSeconds(1);
         Destroy(animal);
+    }
+
+    private IEnumerator ShowAnimalsOnBoard()
+    {
+        m_AnimalsOnBoardScreen.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+
+        m_AnimalsOnBoardScreen.SetActive(false);
     }
 
     public void BackToMenu()

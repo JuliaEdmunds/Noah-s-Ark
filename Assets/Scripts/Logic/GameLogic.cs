@@ -24,6 +24,7 @@ public class GameLogic
     private int m_NumAnimalTypes;
     private List<EAnimal> m_AnimalTypesInGame;
     public IReadOnlyList<EAnimal> AnimalTypesInGame => m_AnimalTypesInGame;
+    public IReadOnlyCollection<AnimalData> AnimalsOnBoard => m_AnimalsOnBoard;
 
     public void StartGame(int numAnimals, int numLifelines)
     {
