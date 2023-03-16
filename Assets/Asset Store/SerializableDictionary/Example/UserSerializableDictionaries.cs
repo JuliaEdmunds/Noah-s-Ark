@@ -26,3 +26,5 @@ public class MyClass
 public class QuaternionMyClassDictionary : SerializableDictionary<Quaternion, MyClass> {}
 
 [Serializable] public class Animal2DDictionary : SerializableDictionary<AnimalData, Animal2D> {}
+
+[Serializable] public class Animal3DDictionary : SerializableDictionary<AnimalData, Animal3D> { }

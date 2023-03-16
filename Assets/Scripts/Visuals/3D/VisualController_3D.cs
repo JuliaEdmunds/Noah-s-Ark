@@ -14,9 +14,17 @@ public class VisualController_3D : MonoBehaviour
 {
     [SerializeField] private GameObject m_Forest;
     [SerializeField] private GameObject m_Ship;
+    [SerializeField] private Animal3DDictionary m_AnimalDataPrefabDict = new();
+
+    [SerializeField, Space] private Vector3 m_SpawnPos;
+
+    [SerializeField, Header("UI")] private TextMeshProUGUI m_AnimalText;
+    [SerializeField] private GameObject m_GameOverScreen;
+    [SerializeField] private TextMeshProUGUI m_GameOverText;
 
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
+    private GameObject m_CurrentAnimal;
 
     void Start()
     {
@@ -41,11 +49,13 @@ public class VisualController_3D : MonoBehaviour
     public void AcceptAnimal()
     {
         m_GameLogic.AcceptAnimal();
+        StartCoroutine(RemoveAnimal(m_CurrentAnimal));
     }
 
     public void DeclineAnimal()
     {
         m_GameLogic.DeclineAnimal();
+        StartCoroutine(RemoveAnimal(m_CurrentAnimal));
     }
 
     public void GetHelp()
@@ -55,7 +65,7 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnNewAnimalAppears(AnimalData animal)
     {
-
+        StartCoroutine(SpawnAnimal(animal));
     }
 
     private void OnAnimalCorrect(AnimalData animal)
@@ -65,13 +75,36 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameOver(AnimalData animal)
     {
-
+        StopAllCoroutines();
+        m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
+        m_GameOverScreen.SetActive(true);
     }
 
 
     private void OnGameWon()
     {
-        
+        StopAllCoroutines();
+        m_GameOverText.text = "All animals on board. Congrats!";
+        m_GameOverScreen.SetActive(true);
+    }
+
+    private IEnumerator SpawnAnimal(AnimalData animal)
+    {
+        Animal3D currentAnimalData = m_AnimalDataPrefabDict[animal];
+        GameObject currentPrefab = currentAnimalData.AnimalPrefab;
+
+        // Fow nor instantiate straight at presentable position
+        yield return new WaitForSeconds(1.5f);
+        m_AnimalText.gameObject.SetActive(true);
+        m_AnimalText.text = $"{animal.Gender} {animal.AnimalType}";
+        m_CurrentAnimal = Instantiate(currentPrefab, m_SpawnPos, currentPrefab.transform.rotation);
+    }
+
+    private IEnumerator RemoveAnimal(GameObject animal)
+    {
+        m_AnimalText.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Destroy(animal);
     }
 
     public void BackToMenu()

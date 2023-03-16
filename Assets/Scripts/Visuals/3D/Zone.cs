@@ -1,23 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Zone : MonoBehaviour
 {
     [SerializeField] private EActionType m_ActionType;
+    [SerializeField] private UnityEvent m_Event;
 
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (m_ActionType == EActionType.Accept)
-            {
-                Debug.Log("Accept");
-            }
-            else
-            {
-                Debug.Log("Decline");
-            }
+            m_Event.Invoke();
         }
     }
 }
