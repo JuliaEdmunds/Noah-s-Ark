@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 public enum EAnimal
 {
     Bear,
-    Boar,
     Deer,
     Fox,
     Moose,
