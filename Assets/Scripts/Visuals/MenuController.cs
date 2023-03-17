@@ -25,8 +25,6 @@ public class MenuController : MonoBehaviour
         GameSettings.NumAnimals = (int)value;
 
         m_NumAnimalsText.text = value.ToString();
-
-        Debug.Log("Num animals changed");
     }
 
     public void OnLifelineSliderChanged(float value)
@@ -34,8 +32,6 @@ public class MenuController : MonoBehaviour
         GameSettings.NumLifelines = (int)value;
 
         m_NumLifelinesText.text = value.ToString();
-
-        Debug.Log("Num lifelines changed");
     }
 
     private void LoadDifficulty()

@@ -41,8 +41,6 @@ public class VisualController_3D : MonoBehaviour
 
         m_GameLogic.StartGame(GameSettings.NumAnimals, GameSettings.NumLifelines);
 
-
-        // TODO: Find a 3D HELP sign and place it at the front of the screen + fix the postiion of the liflines on screen
         m_NumLifelinesLeft = GameSettings.NumLifelines;
 
         if (m_NumLifelinesLeft < 1)
