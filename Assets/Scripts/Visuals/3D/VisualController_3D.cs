@@ -119,9 +119,7 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameOver(AnimalData animal)
     {
-        m_Ship.SetActive(false);
-        m_Forest.SetActive(false);
-        StopAllCoroutines();
+        TurnOffClickables();
         m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
         m_GameOverScreen.SetActive(true);
     }
@@ -129,10 +127,8 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameWon()
     {
+        TurnOffClickables();
         RenderSettings.skybox = m_SunnySkybox;
-        m_Ship.SetActive(false);
-        m_Forest.SetActive(false);
-        StopAllCoroutines();
         m_GameOverText.text = "All animals on board. Congrats!";
         m_GameOverScreen.SetActive(true);
     }
@@ -146,7 +142,7 @@ public class VisualController_3D : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         m_AnimalText.gameObject.SetActive(true);
         m_AnimalText.text = $"{animal.Gender} {animal.AnimalType}";
-        m_CurrentAnimal = Instantiate(currentPrefab, m_SpawnPos, currentPrefab.transform.rotation);
+        m_CurrentAnimal = Instantiate(currentPrefab, m_SpawnPos, Quaternion.LookRotation(currentPrefab.transform.forward, Vector3.up));
     }
 
     private IEnumerator MoveAnimalToForest(GameObject animal)
@@ -203,6 +199,14 @@ public class VisualController_3D : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         m_AnimalsOnBoardScreen.SetActive(false);
+    }
+
+    private void TurnOffClickables()
+    {
+        m_Lifeline.SetActive(false);
+        m_Ship.SetActive(false);
+        m_Forest.SetActive(false);
+        StopAllCoroutines();
     }
 
     public void BackToMenu()
