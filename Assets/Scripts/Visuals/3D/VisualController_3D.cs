@@ -76,14 +76,26 @@ public class VisualController_3D : MonoBehaviour
 
     public void AcceptAnimal()
     {
+        if (m_CurrentAnimal == null)
+        {
+            return;
+        }
+
         m_GameLogic.AcceptAnimal();
-        StartCoroutine(MoveAnimalToShip(m_CurrentAnimal));
+        Vector3 targetPos = m_ShipEntry.transform.position;
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos));
     }
 
     public void DeclineAnimal()
     {
+        if (m_CurrentAnimal == null)
+        {
+            return;
+        }
+
         m_GameLogic.DeclineAnimal();
-        StartCoroutine(MoveAnimalToForest(m_CurrentAnimal));
+        Vector3 targetPos = m_ForestEntry.transform.position;
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos));
     }
 
     public void GetHelp()
@@ -145,44 +157,29 @@ public class VisualController_3D : MonoBehaviour
         m_CurrentAnimal = Instantiate(currentPrefab, m_SpawnPos, Quaternion.LookRotation(currentPrefab.transform.forward, Vector3.up));
     }
 
-    private IEnumerator MoveAnimalToForest(GameObject animal)
+    private IEnumerator MoveAnimal(GameObject animalGameObject, Vector3 targetPos)
     {
         float duration = 0.5f;
         float timeElapsed = 0;
-        Vector3 startPos = animal.transform.position;
-        Vector3 targetPos = m_ForestEntry.transform.position;
+        Vector3 startPos = animalGameObject.transform.position;
+
+        animalGameObject.transform.LookAt(targetPos);
+
+        Animal3D animal3D = animalGameObject.GetComponent<Animal3D>();
+
 
         while (timeElapsed < duration)
         {
             m_AnimalText.gameObject.SetActive(false);
-            animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
+            animalGameObject.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
 
         // TODO: Add VFX of animal disappearing
-        Destroy(animal);
-    }
-
-    private IEnumerator MoveAnimalToShip(GameObject animal)
-    {
-        float duration = 0.5f;
-        float timeElapsed = 0;
-        Vector3 startPos = animal.transform.position; 
-        Vector3 targetPos = m_ShipEntry.transform.position;
-
-        while (timeElapsed < duration)
-        {
-            m_AnimalText.gameObject.SetActive(false);
-            animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
-            timeElapsed += Time.deltaTime;
-   
-            yield return null;
-        }
-
-        // TODO: Add VFX of animal disappearing
-        Destroy(animal);
+        Destroy(animalGameObject);
+        m_CurrentAnimal = null;
     }
 
     private IEnumerator ShowAnimalsOnBoard()

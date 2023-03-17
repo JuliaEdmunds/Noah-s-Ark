@@ -12,14 +12,20 @@ using UnityEngine.UI;
 
 public class VisualController_2D : MonoBehaviour
 {
-    [SerializeField, Header("Animal")] private TextMeshProUGUI m_AnimalText;
+    [Header("Animal")]
+    [SerializeField] private TextMeshProUGUI m_AnimalText;
     [SerializeField] Image m_AnimalSprite;
     [SerializeField] Animal2DDictionary m_Animal2DDictionary = new();
-    [SerializeField, Header("Game State")] GameObject m_GameOnButtons;
+
+    [Header("Game State")]
+    [SerializeField] private List<GameObject> m_GameOnButtons;
     [SerializeField] GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
-    [SerializeField, Header("Lifeline")] private TextMeshProUGUI m_LifelineText;
+
+    [Header("Lifeline")]
+    [SerializeField] private TextMeshProUGUI m_LifelineText;
     [SerializeField] private Button m_LifelineButton;
+    [SerializeField] private GameObject m_LifelineImage;
     [SerializeField] private GameObject m_AnimalsOnBoardScreen;
     [SerializeField] private List<AnimalSlotsUI> m_AnimalPairsList;
 
@@ -41,6 +47,7 @@ public class VisualController_2D : MonoBehaviour
         if (m_NumLifelinesLeft < 1)
         {
             m_LifelineButton.interactable = false;
+            m_LifelineImage.SetActive(false);
         }
 
         ShowNumLifelines();
@@ -122,18 +129,31 @@ public class VisualController_2D : MonoBehaviour
     private IEnumerator ShowAnimalsOnBoard()
     {
         m_AnimalsOnBoardScreen.SetActive(true);
-        m_GameOnButtons.SetActive(false);
+
+        foreach (var button in m_GameOnButtons)
+        {
+            button.SetActive(false);
+        }
 
         yield return new WaitForSeconds(5);
 
         m_AnimalsOnBoardScreen.SetActive(false);
-        m_GameOnButtons.SetActive(true);
+
+        foreach (var button in m_GameOnButtons)
+        {
+            button.SetActive(true);
+        }
     }
 
     private void OnGameOver(AnimalData animal)
     {
         m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
-        m_GameOnButtons.SetActive(false);
+
+        foreach (var button in m_GameOnButtons)
+        {
+            button.SetActive(false);
+        }
+
         m_GameOverScreen.SetActive(true);
         m_AnimalsOnBoardScreen.SetActive(true);
     }
@@ -142,6 +162,7 @@ public class VisualController_2D : MonoBehaviour
     {
         if (m_NumLifelinesLeft < 1)
         {
+            m_LifelineImage.SetActive(false);
             m_LifelineButton.interactable = false;
             m_LifelineText.text = "No lifelines";
         }
@@ -158,7 +179,12 @@ public class VisualController_2D : MonoBehaviour
     private void OnGameWon()
     {
         m_GameOverText.text = "All animals on board. Congrats!";
-        m_GameOnButtons.SetActive(false);
+
+        foreach (var button in m_GameOnButtons)
+        {
+            button.SetActive(false);
+        }
+
         m_GameOverScreen.SetActive(true);
         m_AnimalsOnBoardScreen.SetActive(true);
     }
