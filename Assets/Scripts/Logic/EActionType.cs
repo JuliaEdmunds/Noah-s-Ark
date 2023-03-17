@@ -8,5 +8,6 @@ using System.Threading.Tasks;
 public enum EActionType
 {
     Accept,
-    Decline
+    Decline,
+    Lifeline
 }

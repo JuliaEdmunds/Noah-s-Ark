@@ -26,7 +26,7 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField, Header("Lifeline")] private GameObject m_AnimalsOnBoardScreen;
     [SerializeField] private Animal3DDictionary m_AllAnimalsOnBoard;
     [SerializeField] private GameObject m_Lifeline;
-    [SerializeField] private TextMeshProUGUI m_LifelineText;
+    [SerializeField] private TextMeshPro m_LifelineText;
 
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
