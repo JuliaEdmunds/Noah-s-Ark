@@ -14,8 +14,11 @@ using UnityEngine.UI;
 
 public class VisualController_3D : MonoBehaviour
 {
+    [Header("Main Objects")]
     [SerializeField] private GameObject m_Forest;
+    [SerializeField] private GameObject m_ForestEntry;
     [SerializeField] private GameObject m_Ship;
+    [SerializeField] private GameObject m_ShipEntry;
     [SerializeField] private Material m_SunnySkybox;
     [SerializeField] private Animal3DDictionary m_AnimalDataPrefabDict = new();
 
@@ -80,7 +83,7 @@ public class VisualController_3D : MonoBehaviour
     public void DeclineAnimal()
     {
         m_GameLogic.DeclineAnimal();
-        StartCoroutine(RemoveAnimal(m_CurrentAnimal));
+        StartCoroutine(MoveAnimalToForest(m_CurrentAnimal));
     }
 
     public void GetHelp()
@@ -116,6 +119,8 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameOver(AnimalData animal)
     {
+        m_Ship.SetActive(false);
+        m_Forest.SetActive(false);
         StopAllCoroutines();
         m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
         m_GameOverScreen.SetActive(true);
@@ -125,6 +130,8 @@ public class VisualController_3D : MonoBehaviour
     private void OnGameWon()
     {
         RenderSettings.skybox = m_SunnySkybox;
+        m_Ship.SetActive(false);
+        m_Forest.SetActive(false);
         StopAllCoroutines();
         m_GameOverText.text = "All animals on board. Congrats!";
         m_GameOverScreen.SetActive(true);
@@ -142,37 +149,43 @@ public class VisualController_3D : MonoBehaviour
         m_CurrentAnimal = Instantiate(currentPrefab, m_SpawnPos, currentPrefab.transform.rotation);
     }
 
-    private IEnumerator RemoveAnimal(GameObject animal)
+    private IEnumerator MoveAnimalToForest(GameObject animal)
     {
-        m_AnimalText.gameObject.SetActive(false);
-        yield return new WaitForSeconds(1);
-        Destroy(animal);
-    }
-
-    private IEnumerator MoveAnimalToShip(GameObject animal)
-    {
-        float duration = 2;
+        float duration = 0.5f;
         float timeElapsed = 0;
-        Vector3 startPos = animal.transform.position; 
-        Vector3 targetPos = m_Ship.transform.position;
+        Vector3 startPos = animal.transform.position;
+        Vector3 targetPos = m_ForestEntry.transform.position;
+
         while (timeElapsed < duration)
         {
             m_AnimalText.gameObject.SetActive(false);
             animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
 
-            // Vector3 moveDirection = m_Ship.transform.position - animal.transform.position;
-            // moveDirection = moveDirection.normalized * Time.deltaTime * m_MoveSpeed;
-            // float maxDistance = Vector3.Distance(transform.position, m_Ship.transform.position);
-            // transform.position = transform.position + Vector3.ClampMagnitude(moveDirection, maxDistance);
-   
-            yield return new WaitForSeconds(2);
-            // yield return null;
-            // TODO: Add VFX of animal disappearing
-
+            yield return null;
         }
 
-        animal.transform.position = targetPos;
+        // TODO: Add VFX of animal disappearing
+        Destroy(animal);
+    }
+
+    private IEnumerator MoveAnimalToShip(GameObject animal)
+    {
+        float duration = 0.5f;
+        float timeElapsed = 0;
+        Vector3 startPos = animal.transform.position; 
+        Vector3 targetPos = m_ShipEntry.transform.position;
+
+        while (timeElapsed < duration)
+        {
+            m_AnimalText.gameObject.SetActive(false);
+            animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+   
+            yield return null;
+        }
+
+        // TODO: Add VFX of animal disappearing
         Destroy(animal);
     }
 
