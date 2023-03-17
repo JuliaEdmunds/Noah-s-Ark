@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,18 +16,26 @@ public class VisualController_3D : MonoBehaviour
 {
     [SerializeField] private GameObject m_Forest;
     [SerializeField] private GameObject m_Ship;
+    [SerializeField] private Material m_SunnySkybox;
     [SerializeField] private Animal3DDictionary m_AnimalDataPrefabDict = new();
 
-    [SerializeField, Space] private Vector3 m_SpawnPos;
+    [Header("Spawn Controls")]
+    [SerializeField] private Vector3 m_SpawnPos;
+    [SerializeField, Range(0.1f, 5f)] private float m_MoveSpeed;
 
-    [SerializeField, Header("UI")] private TextMeshProUGUI m_AnimalText;
+    [SerializeField, Header("UI")] private TextMeshPro m_AnimalText;
     [SerializeField] private GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
 
-    [SerializeField, Header("Lifeline")] private GameObject m_AnimalsOnBoardScreen;
+    [Header("Lifeline")]
+    [SerializeField] private GameObject m_AnimalsOnBoardScreen;
     [SerializeField] private Animal3DDictionary m_AllAnimalsOnBoard;
     [SerializeField] private GameObject m_Lifeline;
     [SerializeField] private TextMeshPro m_LifelineText;
+
+    [Header("Cameras")]
+    [SerializeField] private CinemachineVirtualCamera m_MainCamera;
+    [SerializeField] private CinemachineVirtualCamera m_ShipCamera;
 
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
@@ -65,7 +74,7 @@ public class VisualController_3D : MonoBehaviour
     public void AcceptAnimal()
     {
         m_GameLogic.AcceptAnimal();
-        StartCoroutine(RemoveAnimal(m_CurrentAnimal));
+        StartCoroutine(MoveAnimalToShip(m_CurrentAnimal));
     }
 
     public void DeclineAnimal()
@@ -115,6 +124,7 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameWon()
     {
+        RenderSettings.skybox = m_SunnySkybox;
         StopAllCoroutines();
         m_GameOverText.text = "All animals on board. Congrats!";
         m_GameOverScreen.SetActive(true);
@@ -139,9 +149,43 @@ public class VisualController_3D : MonoBehaviour
         Destroy(animal);
     }
 
+    private IEnumerator MoveAnimalToShip(GameObject animal)
+    {
+        float duration = 2;
+        float timeElapsed = 0;
+        Vector3 startPos = animal.transform.position; 
+        Vector3 targetPos = m_Ship.transform.position;
+        while (timeElapsed < duration)
+        {
+            m_AnimalText.gameObject.SetActive(false);
+            animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+
+            // Vector3 moveDirection = m_Ship.transform.position - animal.transform.position;
+            // moveDirection = moveDirection.normalized * Time.deltaTime * m_MoveSpeed;
+            // float maxDistance = Vector3.Distance(transform.position, m_Ship.transform.position);
+            // transform.position = transform.position + Vector3.ClampMagnitude(moveDirection, maxDistance);
+   
+            yield return new WaitForSeconds(2);
+            // yield return null;
+            // TODO: Add VFX of animal disappearing
+
+        }
+
+        animal.transform.position = targetPos;
+        Destroy(animal);
+    }
+
     private IEnumerator ShowAnimalsOnBoard()
     {
         m_AnimalsOnBoardScreen.SetActive(true);
+        m_MainCamera.Priority = 1;
+        m_ShipCamera.Priority = 10;
+
+        yield return new WaitForSeconds(5);
+
+        m_MainCamera.Priority = 10;
+        m_ShipCamera.Priority = 1;
 
         yield return new WaitForSeconds(5);
 
