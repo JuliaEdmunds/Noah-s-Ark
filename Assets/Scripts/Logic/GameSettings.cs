@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 public static class GameSettings
 {
-    public static int NumAnimals = 2;
+    public static int NumAnimals = 7;
 
-    public static int NumLifelines = 1;
+    public static int NumLifelines = 3;
 
-    public static EGameMode GameMode = EGameMode._2D;
+    public static EGameMode GameMode = EGameMode._3D;
 }
