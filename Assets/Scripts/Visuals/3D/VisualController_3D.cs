@@ -122,7 +122,9 @@ public class VisualController_3D : MonoBehaviour
 
         m_NumLifelinesLeft--;
         m_LifelineText.text = $"{m_NumLifelinesLeft}";
+        m_Ship.SetActive(false);
         StartCoroutine(ShowAnimalsOnBoard());
+        m_Ship.SetActive(true);
 
         if (m_NumLifelinesLeft < 1)
         {
