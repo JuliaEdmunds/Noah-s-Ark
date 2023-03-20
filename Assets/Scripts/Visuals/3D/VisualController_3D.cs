@@ -41,6 +41,12 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera m_MainCamera;
     [SerializeField] private CinemachineVirtualCamera m_ShipCamera;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private AudioClip m_WonGameSound;
+    [SerializeField] private AudioClip m_LostGameSound;
+    [SerializeField] private AudioClip m_AnimalCorrectSound;
+
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
     private Animal3D m_CurrentAnimal;
@@ -54,6 +60,7 @@ public class VisualController_3D : MonoBehaviour
         m_GameLogic.OnGameWon += OnGameWon;
 
         m_GameLogic.StartGame(GameSettings.NumAnimals, GameSettings.NumLifelines);
+        m_AudioSource.Play();
 
         m_NumLifelinesLeft = GameSettings.NumLifelines;
 
@@ -131,6 +138,8 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnAnimalCorrect(AnimalData animal)
     {
+        m_AudioSource.PlayOneShot(m_AnimalCorrectSound, 1);
+
         Animal3D currentAnimal = m_AllAnimalsOnBoard[animal];
 
         GameObject currentAnimalGameOject = currentAnimal.AnimalPrefab;
@@ -140,6 +149,8 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameOver(AnimalData animal)
     {
+        m_AudioSource.Stop();
+        m_AudioSource.PlayOneShot(m_LostGameSound, 1);
         TurnOffClickables();
         m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
         m_GameOverScreen.SetActive(true);
@@ -148,6 +159,8 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnGameWon()
     {
+        m_AudioSource.Stop();
+        m_AudioSource.PlayOneShot(m_WonGameSound, 1);
         TurnOffClickables();
         RenderSettings.skybox = m_SunnySkybox;
         m_GameOverText.text = "All animals on board. Congrats!";
