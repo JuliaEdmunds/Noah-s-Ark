@@ -131,8 +131,11 @@ public class VisualController_3D : MonoBehaviour
 
     private void OnAnimalCorrect(AnimalData animal)
     {
-        GameObject currentAnimal = m_AllAnimalsOnBoard[animal].AnimalPrefab;
-        currentAnimal.SetActive(true);
+        Animal3D currentAnimal = m_AllAnimalsOnBoard[animal];
+
+        GameObject currentAnimalGameOject = currentAnimal.AnimalPrefab;
+
+        currentAnimalGameOject.SetActive(true);
     }
 
     private void OnGameOver(AnimalData animal)
@@ -164,7 +167,7 @@ public class VisualController_3D : MonoBehaviour
         m_CurrentAnimal = animalGameObject.GetComponent<Animal3D>();
 
         Vector3 targetPos = m_AnimalShowPos.transform.position;
-        MoveAnimal(m_CurrentAnimal, targetPos, false);
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos, false));
     }
 
     private IEnumerator MoveAnimal(Animal3D animal, Vector3 targetPos, bool shouldDestroy)
@@ -178,7 +181,6 @@ public class VisualController_3D : MonoBehaviour
 
         while (timeElapsed < duration)
         {
-            m_AnimalText.gameObject.SetActive(false);
             animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
 
@@ -190,10 +192,10 @@ public class VisualController_3D : MonoBehaviour
         // TODO: Add VFX of animal disappearing
         if (shouldDestroy)
         {
+            m_AnimalText.gameObject.SetActive(false);
             Destroy(animal.gameObject);
-        }
-        
-        m_CurrentAnimal = null;
+            m_CurrentAnimal = null;
+        }        
     }
 
     private IEnumerator ShowAnimalsOnBoard()
@@ -201,6 +203,14 @@ public class VisualController_3D : MonoBehaviour
         m_AnimalsOnBoardScreen.SetActive(true);
         m_MainCamera.Priority = 1;
         m_ShipCamera.Priority = 10;
+
+        foreach (var animal in m_AllAnimalsOnBoard)
+        {
+            if (animal.Value.gameObject.activeSelf)
+            {
+                animal.Value.StopMoving();
+            }
+        }
 
         yield return new WaitForSeconds(5);
 

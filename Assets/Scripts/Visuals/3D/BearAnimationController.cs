@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class BearAnimationController : AAnimalAnimationController
+public class BearAnimationController : AAnimalAnimationController
 {
     public override void StartMoving()
     {
