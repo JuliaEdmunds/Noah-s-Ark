@@ -5,6 +5,7 @@ using UnityEngine;
 public class Animal3D : MonoBehaviour
 {
     [SerializeField] private GameObject m_AnimalPrefab;
+    [SerializeField] private AAnimalAnimationController m_AnimationController;
 
     // Common pattern to protect against setting serialized data
     // use short => instead of get { ... }
@@ -13,12 +14,12 @@ public class Animal3D : MonoBehaviour
     // TODO: Call this script from VisualController
     public void StartMoving()
     {
-        // TODO: Call AAnimalAnimationController.StartMoving()
+        m_AnimationController.StartMoving();
     }
 
     // TODO: Call this script from VisualController
     public void StopMoving()
     {
-        // TODO: Call AAnimalAnimationController.StopMoving()
+        m_AnimationController.StopMoving();
     }
 }

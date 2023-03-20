@@ -19,6 +19,7 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField] private GameObject m_ForestEntry;
     [SerializeField] private GameObject m_Ship;
     [SerializeField] private GameObject m_ShipEntry;
+    [SerializeField] private GameObject m_AnimalShowPos;
     [SerializeField] private Material m_SunnySkybox;
     [SerializeField] private Animal3DDictionary m_AnimalDataPrefabDict = new();
 
@@ -42,7 +43,8 @@ public class VisualController_3D : MonoBehaviour
 
     private GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
-    private GameObject m_CurrentAnimal;
+    private Animal3D m_CurrentAnimal;
+
 
     void Start()
     {
@@ -76,6 +78,8 @@ public class VisualController_3D : MonoBehaviour
 
     public void AcceptAnimal()
     {
+        bool shouldDestroy = true;
+
         if (m_CurrentAnimal == null)
         {
             return;
@@ -83,11 +87,13 @@ public class VisualController_3D : MonoBehaviour
 
         m_GameLogic.AcceptAnimal();
         Vector3 targetPos = m_ShipEntry.transform.position;
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos));
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos, shouldDestroy));
     }
 
     public void DeclineAnimal()
     {
+        bool shouldDestroy = true;
+
         if (m_CurrentAnimal == null)
         {
             return;
@@ -95,7 +101,7 @@ public class VisualController_3D : MonoBehaviour
 
         m_GameLogic.DeclineAnimal();
         Vector3 targetPos = m_ForestEntry.transform.position;
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos));
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos, shouldDestroy));
     }
 
     public void GetHelp()
@@ -154,31 +160,39 @@ public class VisualController_3D : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         m_AnimalText.gameObject.SetActive(true);
         m_AnimalText.text = $"{animal.Gender} {animal.AnimalType}";
-        m_CurrentAnimal = Instantiate(currentPrefab, m_SpawnPos, Quaternion.LookRotation(currentPrefab.transform.forward, Vector3.up));
+        GameObject animalGameObject = Instantiate(currentPrefab, m_SpawnPos, Quaternion.LookRotation(currentPrefab.transform.forward, Vector3.up));
+        m_CurrentAnimal = animalGameObject.GetComponent<Animal3D>();
+
+        Vector3 targetPos = m_AnimalShowPos.transform.position;
+        MoveAnimal(m_CurrentAnimal, targetPos, false);
     }
 
-    private IEnumerator MoveAnimal(GameObject animalGameObject, Vector3 targetPos)
+    private IEnumerator MoveAnimal(Animal3D animal, Vector3 targetPos, bool shouldDestroy)
     {
         float duration = 0.5f;
         float timeElapsed = 0;
-        Vector3 startPos = animalGameObject.transform.position;
+        Vector3 startPos = animal.transform.position;
 
-        animalGameObject.transform.LookAt(targetPos);
-
-        Animal3D animal3D = animalGameObject.GetComponent<Animal3D>();
-
+        animal.transform.LookAt(targetPos);
+        animal.StartMoving();
 
         while (timeElapsed < duration)
         {
             m_AnimalText.gameObject.SetActive(false);
-            animalGameObject.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
+            animal.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
 
+        animal.StopMoving();
+
         // TODO: Add VFX of animal disappearing
-        Destroy(animalGameObject);
+        if (shouldDestroy)
+        {
+            Destroy(animal.gameObject);
+        }
+        
         m_CurrentAnimal = null;
     }
 
