@@ -21,6 +21,8 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField] private GameObject m_ShipEntry;
     [SerializeField] private GameObject m_AnimalShowPos;
     [SerializeField] private Material m_SunnySkybox;
+    [SerializeField] private ParticleSystem m_ShipParticles;
+    [SerializeField] private ParticleSystem m_ForestParticles;
     [SerializeField] private Animal3DDictionary m_AnimalDataPrefabDict = new();
 
     [Header("Spawn Controls")]
@@ -95,8 +97,7 @@ public class VisualController_3D : MonoBehaviour
         }
 
         m_GameLogic.AcceptAnimal();
-        Vector3 targetPos = m_ShipEntry.transform.position;
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos, shouldDestroy));
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, m_ShipEntry, shouldDestroy));
     }
 
     public void DeclineAnimal()
@@ -109,8 +110,7 @@ public class VisualController_3D : MonoBehaviour
         }
 
         m_GameLogic.DeclineAnimal();
-        Vector3 targetPos = m_ForestEntry.transform.position;
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos, shouldDestroy));
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, m_ForestEntry, shouldDestroy));
     }
 
     public void GetHelp()
@@ -183,15 +183,16 @@ public class VisualController_3D : MonoBehaviour
         GameObject animalGameObject = Instantiate(currentPrefab, m_SpawnPos, Quaternion.LookRotation(currentPrefab.transform.forward, Vector3.up));
         m_CurrentAnimal = animalGameObject.GetComponent<Animal3D>();
 
-        Vector3 targetPos = m_AnimalShowPos.transform.position;
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, targetPos, false));
+        StartCoroutine(MoveAnimal(m_CurrentAnimal, m_AnimalShowPos, false));
     }
 
-    private IEnumerator MoveAnimal(Animal3D animal, Vector3 targetPos, bool shouldDestroy)
+    private IEnumerator MoveAnimal(Animal3D animal, GameObject entryPoint, bool shouldDestroy)
     {
         float duration = 0.5f;
         float timeElapsed = 0;
+
         Vector3 startPos = animal.transform.position;
+        Vector3 targetPos = entryPoint.transform.position;
 
         animal.transform.LookAt(targetPos);
         animal.StartMoving();
@@ -209,6 +210,15 @@ public class VisualController_3D : MonoBehaviour
         // TODO: Add VFX of animal disappearing
         if (shouldDestroy)
         {
+            if (entryPoint == m_ForestEntry)
+            {
+                m_ForestParticles.Play();
+            }
+            else
+            {
+                m_ShipParticles.Play();
+            }
+
             m_AnimalText.gameObject.SetActive(false);
             Destroy(animal.gameObject);
             m_CurrentAnimal = null;
