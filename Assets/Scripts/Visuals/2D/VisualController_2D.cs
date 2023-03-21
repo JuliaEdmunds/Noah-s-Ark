@@ -29,12 +29,19 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] private GameObject m_AnimalsOnBoardScreen;
     [SerializeField] private List<AnimalSlotsUI> m_AnimalPairsList;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private AudioClip m_AcceptSound;
+    [SerializeField] private AudioClip m_GameLostSound;
+    [SerializeField] private AudioClip m_GameWonSound;
+
     private GameLogic m_GameLogic = new();
     private Dictionary<EAnimal, AnimalSlotsUI> m_AnimalPairsDict = new();
     private int m_NumLifelinesLeft;
 
     void Start()
     {
+        m_AudioSource.Play();
         m_GameLogic.OnNewAnimalAppears += OnNewAnimalAppears;
         m_GameLogic.OnGameOver += OnGameOver;
         m_GameLogic.OnAnimalCorrect += OnAnimalCorrect;
@@ -124,6 +131,8 @@ public class VisualController_2D : MonoBehaviour
         AnimalSlotsUI animalSlot = m_AnimalPairsDict[animal.AnimalType];
 
         animalSlot.BoardedAnimal(animal.Gender);
+
+        m_AudioSource.PlayOneShot(m_AcceptSound, 1);
     }
 
     private IEnumerator ShowAnimalsOnBoard()
@@ -147,6 +156,8 @@ public class VisualController_2D : MonoBehaviour
 
     private void OnGameOver(AnimalData animal)
     {
+        m_AudioSource.Stop();
+        m_AudioSource.PlayOneShot(m_GameLostSound, 1);
         m_GameOverText.text = $"{animal.Gender} {animal.AnimalType} was already on board - you sink.";
 
         foreach (var button in m_GameOnButtons)
@@ -178,6 +189,9 @@ public class VisualController_2D : MonoBehaviour
 
     private void OnGameWon()
     {
+        m_AudioSource.Stop();
+        m_AudioSource.PlayOneShot(m_GameWonSound, 1);
+
         m_GameOverText.text = "All animals on board. Congrats!";
 
         foreach (var button in m_GameOnButtons)

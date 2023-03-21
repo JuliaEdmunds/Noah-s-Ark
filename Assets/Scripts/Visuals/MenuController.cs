@@ -15,9 +15,13 @@ public class MenuController : MonoBehaviour
     [SerializeField, Header("Game Mode")] private Toggle m_2DToggle;
     [SerializeField] private Toggle m_3DToggle;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource m_AudioSource;
+
     private void Start()
     {
         LoadDifficulty();
+        m_AudioSource.Play();
     }
 
     public void OnAnimalSliderChanged(float value)

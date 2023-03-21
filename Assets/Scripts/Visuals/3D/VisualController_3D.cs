@@ -250,12 +250,12 @@ public class VisualController_3D : MonoBehaviour
         m_ShipCameraTwo.Priority = 1;
         m_ShipCameraThree.Priority = 10;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         m_MainCamera.Priority = 10;
         m_ShipCameraThree.Priority = 1;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         m_AnimalsOnBoardScreen.SetActive(false);
     }
