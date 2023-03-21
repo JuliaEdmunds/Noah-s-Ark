@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CustomBlends:
   - m_From: Main Virtual Camera
-    m_To: Ship Virtual Camera
+    m_To: Ship Virtual Camera One
     m_Blend:
       m_Style: 7
       m_Time: 2
@@ -42,7 +42,65 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-  - m_From: Ship Virtual Camera
+  - m_From: Ship Virtual Camera One
+    m_To: Ship Virtual Camera Two
+    m_Blend:
+      m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.0047187805
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 3.288771
+          outSlope: 3.288771
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.12422687
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - m_From: Ship Virtual Camera Two
+    m_To: Ship Virtual Camera Three
+    m_Blend:
+      m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.0047187805
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 3.288771
+          outSlope: 3.288771
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.12422687
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - m_From: Ship Virtual Camera Three
     m_To: Main Virtual Camera
     m_Blend:
       m_Style: 7

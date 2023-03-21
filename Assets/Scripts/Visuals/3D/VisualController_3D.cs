@@ -39,7 +39,9 @@ public class VisualController_3D : MonoBehaviour
 
     [Header("Cameras")]
     [SerializeField] private CinemachineVirtualCamera m_MainCamera;
-    [SerializeField] private CinemachineVirtualCamera m_ShipCamera;
+    [SerializeField] private CinemachineVirtualCamera m_ShipCameraOne;
+    [SerializeField] private CinemachineVirtualCamera m_ShipCameraTwo;
+    [SerializeField] private CinemachineVirtualCamera m_ShipCameraThree;
 
     [Header("Audio")]
     [SerializeField] private AudioSource m_AudioSource;
@@ -216,8 +218,6 @@ public class VisualController_3D : MonoBehaviour
     private IEnumerator ShowAnimalsOnBoard()
     {
         m_AnimalsOnBoardScreen.SetActive(true);
-        m_MainCamera.Priority = 1;
-        m_ShipCamera.Priority = 10;
 
         foreach (var animal in m_AllAnimalsOnBoard)
         {
@@ -227,12 +227,25 @@ public class VisualController_3D : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(5);
+        m_MainCamera.Priority = 1;
+        m_ShipCameraOne.Priority = 10;
+
+        yield return new WaitForSeconds(1.5f);
+
+        m_ShipCameraOne.Priority = 1;
+        m_ShipCameraTwo.Priority = 10;
+
+        yield return new WaitForSeconds(1.5f);
+
+        m_ShipCameraTwo.Priority = 1;
+        m_ShipCameraThree.Priority = 10;
+
+        yield return new WaitForSeconds(1.5f);
 
         m_MainCamera.Priority = 10;
-        m_ShipCamera.Priority = 1;
+        m_ShipCameraThree.Priority = 1;
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1.5f);
 
         m_AnimalsOnBoardScreen.SetActive(false);
     }
