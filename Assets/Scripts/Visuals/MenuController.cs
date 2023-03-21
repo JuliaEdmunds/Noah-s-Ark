@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,19 +9,33 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField, Header("Sliders")] private Slider m_NumAnimals;
+    [Header("Sliders")]
+    [SerializeField] private Slider m_NumAnimals;
     [SerializeField] private Slider m_NumLifelines;
     [SerializeField] private TextMeshProUGUI m_NumAnimalsText;
     [SerializeField] private TextMeshProUGUI m_NumLifelinesText;
-    [SerializeField, Header("Game Mode")] private Toggle m_2DToggle;
+
+    [Header("Levelometer")]
+    [SerializeField] private TextMeshProUGUI m_DifficultyText;
+    [SerializeField] private Slider m_DifficultySlider;
+    [SerializeField] private int m_MinLifelines = 0;
+    [SerializeField] private int m_MaxLifelines = 3;
+
+    [Header("Game Mode")]
+    [SerializeField] private Toggle m_2DToggle;
     [SerializeField] private Toggle m_3DToggle;
 
     [Header("Audio")]
     [SerializeField] private AudioSource m_AudioSource;
 
+    private int m_Difficulty = 0;
+    private int m_MinAnimals = 2;
+    private int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
+
     private void Start()
     {
         LoadDifficulty();
+        UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
         m_AudioSource.Play();
     }
 
@@ -29,6 +44,8 @@ public class MenuController : MonoBehaviour
         GameSettings.NumAnimals = (int)value;
 
         m_NumAnimalsText.text = value.ToString();
+
+        UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
     }
 
     public void OnLifelineSliderChanged(float value)
@@ -36,6 +53,23 @@ public class MenuController : MonoBehaviour
         GameSettings.NumLifelines = (int)value;
 
         m_NumLifelinesText.text = value.ToString();
+
+        UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
+    }
+
+    private void UpdateDifficulty(int numAnimals, int numLifelines)
+    {
+        // Increased max values to stop level from showing 0
+        int maxAnimals = m_MaxAnimals + 1;
+        int maxLifelines = m_MaxLifelines + 1;
+
+        float difficultyAnimals = (float)(numAnimals - maxAnimals) / (float)(m_MinAnimals - maxAnimals);
+        float difficultyLifelines = (float)(numLifelines - maxLifelines) / (float)(m_MinLifelines - maxLifelines);
+
+        m_Difficulty = (int)(difficultyAnimals * difficultyLifelines * 100);
+
+        m_DifficultyText.text = $"Level: {m_Difficulty}%";
+        m_DifficultySlider.value = m_Difficulty;
     }
 
     private void LoadDifficulty()
