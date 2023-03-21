@@ -61,10 +61,10 @@ public class MenuController : MonoBehaviour
     private void UpdateDifficulty(int numAnimals, int numLifelines)
     {
         // Increased max values to stop level from showing 0
-        int maxAnimals = m_MinAnimals + 1;
+        int maxAnimals = m_MaxAnimals + 1;
         int maxLifelines = m_MaxLifelines + 1;
 
-        float difficultyAnimals = (float)(numAnimals - maxAnimals) / (float)(m_MaxAnimals - maxAnimals);
+        float difficultyAnimals = (float)(numAnimals - maxAnimals) / (float)(m_MinAnimals - maxAnimals);
         float difficultyLifelines = (float)(numLifelines - maxLifelines) / (float)(m_MinLifelines - maxLifelines);
 
         m_Difficulty = (int)(difficultyAnimals * difficultyLifelines * 100);
