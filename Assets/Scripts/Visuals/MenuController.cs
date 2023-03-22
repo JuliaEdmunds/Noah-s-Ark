@@ -60,14 +60,13 @@ public class MenuController : MonoBehaviour
 
     private void UpdateDifficulty(int numAnimals, int numLifelines)
     {
-        // Increased max values to stop level from showing 0
-        int maxAnimals = m_MaxAnimals + 1;
-        int maxLifelines = m_MaxLifelines + 1;
+        int animalsWeight = 1;
+        int lifelinesWeight = 2;
 
-        float difficultyAnimals = (float)(numAnimals - maxAnimals) / (float)(m_MinAnimals - maxAnimals);
-        float difficultyLifelines = (float)(numLifelines - maxLifelines) / (float)(m_MinLifelines - maxLifelines);
+        float normalizedAnimals = ((float)(numAnimals - m_MinAnimals) / (float)(m_MaxAnimals - m_MinAnimals)) * animalsWeight;
+        float normalizedLifelines = (1 - ((float)(numLifelines - m_MinLifelines) / (float)(m_MaxLifelines - m_MinLifelines))) * lifelinesWeight;
 
-        m_Difficulty = (int)(difficultyAnimals * difficultyLifelines * 100);
+        m_Difficulty = (int)((normalizedAnimals + normalizedLifelines) / (animalsWeight + lifelinesWeight) * 100);
 
         // m_DifficultySlider.color = Color.Lerp(Color.red, Color.green, m_DifficultySlider.value / 100);
 
