@@ -68,8 +68,6 @@ public class MenuController : MonoBehaviour
 
         m_Difficulty = (int)((normalizedAnimals + normalizedLifelines) / (animalsWeight + lifelinesWeight) * 100);
 
-        // m_DifficultySlider.color = Color.Lerp(Color.red, Color.green, m_DifficultySlider.value / 100);
-
         m_DifficultyText.text = $"Level: {m_Difficulty}%";
         m_DifficultySlider.value = m_Difficulty;
     }
