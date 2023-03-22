@@ -19,10 +19,14 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_DifficultyText;
     [SerializeField] private Slider m_DifficultySlider;
     [SerializeField] private Image m_SliderFill; //connected the Image Fill from the slider
-    [SerializeField] private int m_MinLifelines = 0;
-    [SerializeField] private int m_MaxLifelines = 3;
     [SerializeField] private Color m_MinLevelColour;
     [SerializeField] private Color m_MaxLevelColour;
+
+    [Header("Level Grapghs")]
+    [SerializeField] private AnimationCurve m_0LifelinesCurve;
+    [SerializeField] private AnimationCurve m_1LifelinesCurve;
+    [SerializeField] private AnimationCurve m_2LifelinesCurve;
+    [SerializeField] private AnimationCurve m_3LifelinesCurve;
 
     [Header("Game Mode")]
     [SerializeField] private Toggle m_2DToggle;
@@ -38,6 +42,10 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         LoadDifficulty();
+
+        m_NumAnimalsText.text = $"Number of animals: {GameSettings.NumAnimals}";
+        m_NumLifelinesText.text = $"Number of lifelines: {GameSettings.NumLifelines}";
+
         UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
         m_AudioSource.Play();
     }
@@ -46,7 +54,7 @@ public class MenuController : MonoBehaviour
     {
         GameSettings.NumAnimals = (int)value;
 
-        m_NumAnimalsText.text = value.ToString();
+        m_NumAnimalsText.text = $"Number of animals: {value}";
 
         UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
     }
@@ -55,20 +63,31 @@ public class MenuController : MonoBehaviour
     {
         GameSettings.NumLifelines = (int)value;
 
-        m_NumLifelinesText.text = value.ToString();
+        m_NumLifelinesText.text = $"Number of lifelines: {value}";
 
         UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
     }
 
     private void UpdateDifficulty(int numAnimals, int numLifelines)
     {
-        int animalsWeight = 1;
-        int lifelinesWeight = 2;
+        float normalizedAnimals = (float)(numAnimals - m_MinAnimals) / (float)(m_MaxAnimals - m_MinAnimals);
 
-        float normalizedAnimals = ((float)(numAnimals - m_MinAnimals) / (float)(m_MaxAnimals - m_MinAnimals)) * animalsWeight;
-        float normalizedLifelines = (1 - ((float)(numLifelines - m_MinLifelines) / (float)(m_MaxLifelines - m_MinLifelines))) * lifelinesWeight;
+        AnimationCurve curve = m_0LifelinesCurve;
 
-        m_Difficulty = (int)((normalizedAnimals + normalizedLifelines) / (animalsWeight + lifelinesWeight) * 100);
+        if (numLifelines == 1)
+        {
+            curve = m_1LifelinesCurve;
+        }
+        else if (numLifelines == 2)
+        {
+            curve = m_2LifelinesCurve;
+        }
+        else if (numLifelines == 3)
+        {
+            curve = m_3LifelinesCurve;
+        }
+
+        m_Difficulty = Mathf.RoundToInt(curve.Evaluate(normalizedAnimals) * 100);
 
         m_SliderFill.color = Color.Lerp(m_MinLevelColour, m_MaxLevelColour, (float)m_Difficulty / 100);
 
