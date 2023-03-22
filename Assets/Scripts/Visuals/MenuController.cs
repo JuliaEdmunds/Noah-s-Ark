@@ -18,9 +18,11 @@ public class MenuController : MonoBehaviour
     [Header("Levelometer")]
     [SerializeField] private TextMeshProUGUI m_DifficultyText;
     [SerializeField] private Slider m_DifficultySlider;
-    [SerializeField] private Sprite m_SliderFill; //connected the Image Fill from the slider
+    [SerializeField] private Image m_SliderFill; //connected the Image Fill from the slider
     [SerializeField] private int m_MinLifelines = 0;
     [SerializeField] private int m_MaxLifelines = 3;
+    [SerializeField] private Color m_MinLevelColour;
+    [SerializeField] private Color m_MaxLevelColour;
 
     [Header("Game Mode")]
     [SerializeField] private Toggle m_2DToggle;
@@ -67,6 +69,8 @@ public class MenuController : MonoBehaviour
         float normalizedLifelines = (1 - ((float)(numLifelines - m_MinLifelines) / (float)(m_MaxLifelines - m_MinLifelines))) * lifelinesWeight;
 
         m_Difficulty = (int)((normalizedAnimals + normalizedLifelines) / (animalsWeight + lifelinesWeight) * 100);
+
+        m_SliderFill.color = Color.Lerp(m_MinLevelColour, m_MaxLevelColour, (float)m_Difficulty / 100);
 
         m_DifficultyText.text = $"Level: {m_Difficulty}%";
         m_DifficultySlider.value = m_Difficulty;

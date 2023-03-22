@@ -1253,7 +1253,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 834714352}
   m_Father: {fileID: 566866798}
@@ -1525,8 +1525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290.4348, y: 28.235703}
+  m_AnchoredPosition: {x: 0.0012889, y: 0}
+  m_SizeDelta: {x: 300, y: 28.2357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566866799
 MonoBehaviour:
@@ -1568,7 +1568,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 0
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 438864151}
   m_FillRect: {fileID: 1475803294}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
@@ -2527,9 +2527,11 @@ MonoBehaviour:
   m_NumLifelinesText: {fileID: 880136672}
   m_DifficultyText: {fileID: 1367653011}
   m_DifficultySlider: {fileID: 566866799}
-  m_SliderFill: {fileID: 21300000, guid: ed8a9580600b8463eaebd277e6057f2e, type: 3}
+  m_SliderFill: {fileID: 1475803295}
   m_MinLifelines: 0
   m_MaxLifelines: 3
+  m_MinLevelColour: {r: 0, g: 0.998, b: 0, a: 1}
+  m_MaxLevelColour: {r: 0.9622642, g: 0.033285756, b: 0.033285756, a: 1}
   m_2DToggle: {fileID: 26897805}
   m_3DToggle: {fileID: 1129149917}
   m_AudioSource: {fileID: 1334956025}
