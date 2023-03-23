@@ -9,6 +9,14 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+    [Serializable]
+    private struct DifficultyNameData
+    {
+        [Range(0f, 1f)]public float MinPercentageNeeded;
+        public string DifficultyName;
+    }
+
+
     [Header("Sliders")]
     [SerializeField] private Slider m_NumAnimals;
     [SerializeField] private Slider m_NumLifelines;
@@ -21,6 +29,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Image m_SliderFill; //connected the Image Fill from the slider
     [SerializeField] private Color m_MinLevelColour;
     [SerializeField] private Color m_MaxLevelColour;
+    [SerializeField] private List<DifficultyNameData> m_LevelMatcher;
 
     [Header("Level Grapghs")]
     [SerializeField] private AnimationCurve m_0LifelinesCurve;
@@ -87,11 +96,28 @@ public class MenuController : MonoBehaviour
             curve = m_3LifelinesCurve;
         }
 
-        m_Difficulty = Mathf.RoundToInt(curve.Evaluate(normalizedAnimals) * 100);
+        float difficultyAsFloat = curve.Evaluate(normalizedAnimals);
 
-        m_SliderFill.color = Color.Lerp(m_MinLevelColour, m_MaxLevelColour, (float)m_Difficulty / 100);
+        m_Difficulty = Mathf.RoundToInt(difficultyAsFloat * 100);
 
-        m_DifficultyText.text = $"Level: {m_Difficulty}%";
+        // New custom way of sorting I have learnt today
+        m_LevelMatcher.Sort(SortDifficultyNameData);
+
+        string difficultyName = m_LevelMatcher[0].DifficultyName;
+        for (int i = m_LevelMatcher.Count - 1; i >= 0; i--)
+        {
+            DifficultyNameData currentMatch = m_LevelMatcher[i];
+
+            if (difficultyAsFloat >= currentMatch.MinPercentageNeeded)
+            {
+                difficultyName = currentMatch.DifficultyName;
+                break;
+            }
+        }
+
+        m_SliderFill.color = Color.Lerp(m_MinLevelColour, m_MaxLevelColour, difficultyAsFloat);
+
+        m_DifficultyText.text = $"{difficultyName} [{m_Difficulty}%]";
         m_DifficultySlider.value = m_Difficulty;
     }
 
@@ -109,6 +135,11 @@ public class MenuController : MonoBehaviour
         {
             m_3DToggle.isOn = true;
         }
+    }
+
+    private int SortDifficultyNameData(DifficultyNameData a, DifficultyNameData b)
+    {
+        return a.MinPercentageNeeded.CompareTo(b.MinPercentageNeeded);
     }
 
     private void SetGameMode(EGameMode gameMode)
