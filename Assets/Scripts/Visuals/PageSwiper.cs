@@ -50,4 +50,17 @@ public class PageSwiper : MonoBehaviour
 
         m_CurrentPanelIndex--;
     }
+
+    public void CloseTutorial()
+    {
+        GameObject currentPanel = m_PanelData[m_CurrentPanelIndex].Panel;
+        GameObject firstPanel = m_PanelData[0].Panel;
+
+        currentPanel.SetActive(false);
+        firstPanel.SetActive(true);
+
+        m_CurrentPanelIndex = 0;
+
+        gameObject.SetActive(false);
+    }
 }

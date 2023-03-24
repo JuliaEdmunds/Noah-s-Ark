@@ -1,0 +1,3315 @@
+fileFormatVersion: 2
+guid: 0df65603b2b04334192fff51603f8237
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f45af305eb81c7409a824af0bc519f9
+      internalID: -2055551235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2cf2035daea6046a739d8319a55b2f
+      internalID: -777945177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018d10788c67ceb41892b168a3e8d654
+      internalID: -2128421153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c7e1021f790354dbbff9ac6dd892fa
+      internalID: 1748208864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e6abf985168d646975384f38d3c705
+      internalID: 390874857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23b5348d1a44d9469eb31d73298ba1b
+      internalID: 107183625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb8a5355e11d8b4ab104de275895d7c
+      internalID: -600066568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a834980c53a1af49b9b94eb6ae7c3a2
+      internalID: -889770153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 9615
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57e0aacaa69fce4ba41a3e48541d749
+      internalID: -772833782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5db25d4b301e744902051d99e9dd89
+      internalID: -150115208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee303d6cf86cb045b3cf15e1fc2a639
+      internalID: 1552036869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90d8db7015c521b4cb252ad51eb34a2e
+      internalID: 1449347625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4762a0629759deb4abd3fcfe6e878771
+      internalID: -928601983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792affcfd4b259343bfadbe330c9dfea
+      internalID: -828344966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a23efbcb3e00b4d8484a1d7d896e78
+      internalID: -1304898564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9a32bcd082df044a535bde92a32149
+      internalID: 717849210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964a4ee227641b74cab5fd11a85e18d8
+      internalID: 1558216289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 8974
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ef22a815310ed44acb943f398533ba
+      internalID: -955056285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6ced9ea38bcc64787ee98eeae53c55
+      internalID: -95480181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d4885fb179ef24ebbacfefc6a74133
+      internalID: -1768149890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6fe1dfd66c81794a8e8273da3772e42
+      internalID: -1970744248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358d8ef8bfe22284e93e3906b520f620
+      internalID: -2050698239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d95416848baf5438d19e5447b14bb3
+      internalID: 671044872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f44dacf939e7b45a0cdea1132d8581
+      internalID: -1923947749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64170c61cc84824da979569b729edac
+      internalID: -364292592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091b80164b9aac14191aea213ba9a741
+      internalID: 398869618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 8333
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711e7d837e1f8c743b1f8d0316b066f8
+      internalID: 440641602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc409f2f9b7522448a26ad85b20f09e7
+      internalID: -945956235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fff28d6a0a580498f44917a67ddddd
+      internalID: 1304233591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a750b999f2b944e875d4dc35fbdc4f
+      internalID: -1979323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0179868b125d95d4eb919a715cc26708
+      internalID: 1539943010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69054926695a86c4a86ca94939400e3c
+      internalID: -540638743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa645be9cbd8b9d48ae393cc6f004f5c
+      internalID: -102078135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb988964b5fa7845941f5da016b7a82
+      internalID: -1438191188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e19ff107ec65b4e92a7b089cca1d76
+      internalID: 62497656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 7692
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fbaf17bcc53d248b5d85ced694b120
+      internalID: 743374620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068d045eeee0e384fab667eb1b5ba9e7
+      internalID: -616910988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b42331f9b76e24e842482af44cf56a
+      internalID: 509098611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c304157125b30864793830a78722b484
+      internalID: 1376906213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460e101aaa30adf48a9eba79f5d801db
+      internalID: 1840745961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3606e472f77ef4da78294e992d6238
+      internalID: -1754493593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317cae624d46ace44a3cdca509366f25
+      internalID: 688286487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e647bcb2ca37042bae05c89ae5d72e
+      internalID: -2074113325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b706233c9999e4d9520e84d9d6bb56
+      internalID: 1930546311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 7051
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4e2ebd25f42a04bbed54f22f635fdb
+      internalID: -1955985098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad24d26c89db93f468d52f87ef30763a
+      internalID: -750624438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8278d9f27ae224da1db157b54fded1
+      internalID: -1632324182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092fba0ffb4d294468d87537f51552af
+      internalID: 1271961150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3b074eea10e4142adcc008692a1387
+      internalID: 1802695716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6631df1f355a3a449adecde5c5bef08
+      internalID: -1783268152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c752e89bb79d00847bc28c08cf255a99
+      internalID: 1281458480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9913ac0d2747cd41a45bc8ba6abdf29
+      internalID: -568769642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ca29259dc58fa40ae1d43f62afa150
+      internalID: -1171716833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 6410
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60352577834fe124da4ff48bcf3a2e9c
+      internalID: -1903285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2eaacd2c41c4344aad138ace6c8e4bc
+      internalID: -2124732709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf396194ec2d624d854550665dc7685
+      internalID: 758620781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb1a6b41f96e6f469100f9fab96b964
+      internalID: 12434822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839b857238abc7e46b779f404d61a8fb
+      internalID: 1349294529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478e9f8d477ae58498bb32b3c9128bab
+      internalID: -1739562727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ba7910a3094904e89fc80bc59d5829
+      internalID: -1850795822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ac4fffc9398e74daecfdb0a1fb3371
+      internalID: -960116739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7705af76936a70445ad37a00c2349d29
+      internalID: 1224702287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 5769
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68182aac9aaf86f4ca7cbbdb03cf8f5f
+      internalID: 311957915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a2c4b58d099ce4a8d4a392067ded9e
+      internalID: 1812387266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597f72d67d547824598387f9e18f37ce
+      internalID: 1554974273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78787cdca2683394caeef13153b84e24
+      internalID: -1717397272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d955139c0a9c547b121921269f4f5a
+      internalID: 615127194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff3251497701fa448bc8213ea4f639c
+      internalID: 495775321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463c7139fb564974bba2080b5dff8526
+      internalID: 1456931921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0882d20a1e307644a87c4506ce8399a
+      internalID: -1392864002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a6fc594ae4b24468161125bada09af
+      internalID: -1666530482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 5128
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080b2fb9740767241931ef6fa9c22adb
+      internalID: 260472856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d548b737a4c0e904998611ab08b614b6
+      internalID: 1608295158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6daf3115cee87f45b2cd1faa248bc12
+      internalID: 1001948720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f893a752fc62441af33e4dd3f18756
+      internalID: -74004087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e1cc30bb5602940a4c53b7f2ff5d4f
+      internalID: -269563666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd74af1c6aca5e14daabe1d12ae00fc7
+      internalID: 328362433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1043c7363a5c8bd458ad4787823f0c83
+      internalID: 809653023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28f86c4d0350b040a23fe9bd98c6647
+      internalID: -696400733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c6ea1e3001a21438312225462b04d9
+      internalID: 1239526709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 4487
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c60a1e1265dd7459ae36d462ee9448
+      internalID: 1579612265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054bfacffca4d3643b24f9c6f371ac6c
+      internalID: 675163871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e554168c017904890dfe189d2c6178
+      internalID: 1802201512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b055aff64ce124dbabab60b54b7788
+      internalID: -1440805406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fa3bf4096035545a7fd015dda0a6ea
+      internalID: 207247062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddcb906c6b5d9b2479d8370b2c7bc91c
+      internalID: -2007147514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d443f6db1305e914a9926aad58a1e861
+      internalID: -533373185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76768cea8a5dbe45a8e1fc7b06d3bdf
+      internalID: -1845459231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9916db2c4ab7c64f8da9a7ad7456c55
+      internalID: -1240784866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 3846
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5fe019ea30a834281fbd2c66573e95
+      internalID: -426158869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dd5f06ca5d23b439528a81ad6c81ea
+      internalID: -619476643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bb4c0a2ee3f064aae8327f8249aae3
+      internalID: -752130867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8ad2ac3ff89d54ca25bbbae813d06f
+      internalID: -2006760854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2fd93448899d4142920112c34737b34
+      internalID: 630680986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05a32d1f2a499d4f8bd3234423746a5
+      internalID: -1549533082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c95bbb5ae51d6c46b63f9b503ef475a
+      internalID: -1826856395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba15292290e17647ab1f7360207cb78
+      internalID: 1076933375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fceea1e572acdc4dbfc5772ec4dc465
+      internalID: -745178543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 3205
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68c542d7dd6ccb4d800060f776e677d
+      internalID: 842095138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c952572f2f9b8604e994db925dea21f8
+      internalID: 1976322029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf1845576d1eb84582ecc3d5376aae7
+      internalID: -1473611007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cd4392c5c0561439fd0c633ea5e759
+      internalID: 1024825147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c63b0dcc26685438acb07328099ab1
+      internalID: 202966563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ab536e53747cf42baf00dcdc7ae26b
+      internalID: -71109580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422d2db9a8dda0f419ae632defa72c2a
+      internalID: 967011093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_105
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6213503152b35341a2b5154339688fb
+      internalID: -82507044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_106
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa7dd778dd74e045b2b640930f3f38b
+      internalID: -994403358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_107
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 2564
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eae0895c9705a74298c7807264825ee
+      internalID: 1360641793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b364a3865a9e54385d221a4e54e6b3
+      internalID: -1111507822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_109
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab83d11361422af4188611cfc5c6bbd4
+      internalID: -1275255219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_110
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95611082fd1708044bcc11c51d7c25d0
+      internalID: -1915148353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_111
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531c60453dbb362499ef43c7e0b1b0d5
+      internalID: -595876087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_112
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2929b06e8fde39f42bc15aa8c0d73d8f
+      internalID: 1852586228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_113
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d3e498c2168c842a17480463559e1d
+      internalID: -170143070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_114
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0670941704ae88a44a5508154de0f9bb
+      internalID: -1548990880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_115
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b08e90c9d935304b8430fe04f0d31be
+      internalID: 665063725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_116
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 1923
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7da49c0d52119f4ea88c4ae6c67b851
+      internalID: 1032176751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fcad87d14a45949a9e1c56640746b3
+      internalID: -1303285227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_118
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423317588eb1ba94da04e6059503117c
+      internalID: -644235276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_119
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b559fdc4ae5504a8605cfa9fe3a5cc
+      internalID: -110709548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_120
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f838bc223459d4a94f82ffdaf27285
+      internalID: 1953898208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_121
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff072283ced2f5a48a4d8dd66949e6a7
+      internalID: 2061602793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_122
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be590c2c61736b42b01e90e1f26f7fb
+      internalID: -318554313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_123
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c024b0a8652cb4192b254813e55e16
+      internalID: -1146802187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_124
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662a947937e1dc848a55336dadfc88d4
+      internalID: -1998168057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_125
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 1282
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ddea75eafd43664f9958bfb7c8b348e
+      internalID: -1637445730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f189d25e1143d4749aa2718ed2a60af0
+      internalID: 2008136890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_127
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb35ea342d75da04a91f24800f0bc00f
+      internalID: 724757852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_128
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be0050ef9422cf4fabd37251dfe4061
+      internalID: 136509258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_129
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d43b06f9e4914458ca2051745ccef0
+      internalID: -946552084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_130
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7c22319334b544595809f0cd83415a
+      internalID: 282214950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_131
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae3f63e319d63c46b0989919b023168
+      internalID: 1809423733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_132
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755e968c13ef50d4e80db55cc04ac2a9
+      internalID: 1089071328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_133
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54fa9248faffde45a2c300fe0ceeeb3
+      internalID: -615060980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_134
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 641
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa0d654bb710e34e9fbeb03784ee31c
+      internalID: -1324774398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcd70be126a36e42839f4dbc879a40a
+      internalID: 1485948512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_136
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9373cb6c86ecdd941bf9dcb84469deb1
+      internalID: -1156639748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_137
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b913cc984a999244c971b3739561c827
+      internalID: -899320674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_138
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802694e1c44d8ee4f81fdf4f1fed4765
+      internalID: -1437826066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_139
+      rect:
+        serializedVersion: 2
+        x: 4552
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127c945da30541f45a9da1a0b2ca14a2
+      internalID: 611969437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_140
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99f63984f746914faabc8c19ef8b31a
+      internalID: -855938360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_141
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639878cb720451a41ad1415b5ae87ea9
+      internalID: 783484721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_142
+      rect:
+        serializedVersion: 2
+        x: 7966
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f219a56b6d612184c961079461b18169
+      internalID: 1949951071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lifeline3DAnimationSpritesheet_143
+      rect:
+        serializedVersion: 2
+        x: 9104
+        y: 0
+        width: 1138
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98895808690c3f4fb67b482dd4e93f6
+      internalID: -179925849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7ba4e259e09fc4046a7a77f11a7c1aef
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Lifeline3DAnimationSpritesheet_0: -2055551235
+      Lifeline3DAnimationSpritesheet_1: -777945177
+      Lifeline3DAnimationSpritesheet_10: 1552036869
+      Lifeline3DAnimationSpritesheet_100: -1473611007
+      Lifeline3DAnimationSpritesheet_101: 1024825147
+      Lifeline3DAnimationSpritesheet_102: 202966563
+      Lifeline3DAnimationSpritesheet_103: -71109580
+      Lifeline3DAnimationSpritesheet_104: 967011093
+      Lifeline3DAnimationSpritesheet_105: -82507044
+      Lifeline3DAnimationSpritesheet_106: -994403358
+      Lifeline3DAnimationSpritesheet_107: 1360641793
+      Lifeline3DAnimationSpritesheet_108: -1111507822
+      Lifeline3DAnimationSpritesheet_109: -1275255219
+      Lifeline3DAnimationSpritesheet_11: 1449347625
+      Lifeline3DAnimationSpritesheet_110: -1915148353
+      Lifeline3DAnimationSpritesheet_111: -595876087
+      Lifeline3DAnimationSpritesheet_112: 1852586228
+      Lifeline3DAnimationSpritesheet_113: -170143070
+      Lifeline3DAnimationSpritesheet_114: -1548990880
+      Lifeline3DAnimationSpritesheet_115: 665063725
+      Lifeline3DAnimationSpritesheet_116: 1032176751
+      Lifeline3DAnimationSpritesheet_117: -1303285227
+      Lifeline3DAnimationSpritesheet_118: -644235276
+      Lifeline3DAnimationSpritesheet_119: -110709548
+      Lifeline3DAnimationSpritesheet_12: -928601983
+      Lifeline3DAnimationSpritesheet_120: 1953898208
+      Lifeline3DAnimationSpritesheet_121: 2061602793
+      Lifeline3DAnimationSpritesheet_122: -318554313
+      Lifeline3DAnimationSpritesheet_123: -1146802187
+      Lifeline3DAnimationSpritesheet_124: -1998168057
+      Lifeline3DAnimationSpritesheet_125: -1637445730
+      Lifeline3DAnimationSpritesheet_126: 2008136890
+      Lifeline3DAnimationSpritesheet_127: 724757852
+      Lifeline3DAnimationSpritesheet_128: 136509258
+      Lifeline3DAnimationSpritesheet_129: -946552084
+      Lifeline3DAnimationSpritesheet_13: -828344966
+      Lifeline3DAnimationSpritesheet_130: 282214950
+      Lifeline3DAnimationSpritesheet_131: 1809423733
+      Lifeline3DAnimationSpritesheet_132: 1089071328
+      Lifeline3DAnimationSpritesheet_133: -615060980
+      Lifeline3DAnimationSpritesheet_134: -1324774398
+      Lifeline3DAnimationSpritesheet_135: 1485948512
+      Lifeline3DAnimationSpritesheet_136: -1156639748
+      Lifeline3DAnimationSpritesheet_137: -899320674
+      Lifeline3DAnimationSpritesheet_138: -1437826066
+      Lifeline3DAnimationSpritesheet_139: 611969437
+      Lifeline3DAnimationSpritesheet_14: -1304898564
+      Lifeline3DAnimationSpritesheet_140: -855938360
+      Lifeline3DAnimationSpritesheet_141: 783484721
+      Lifeline3DAnimationSpritesheet_142: 1949951071
+      Lifeline3DAnimationSpritesheet_143: -179925849
+      Lifeline3DAnimationSpritesheet_15: 717849210
+      Lifeline3DAnimationSpritesheet_16: 1558216289
+      Lifeline3DAnimationSpritesheet_17: -955056285
+      Lifeline3DAnimationSpritesheet_18: -95480181
+      Lifeline3DAnimationSpritesheet_19: -1768149890
+      Lifeline3DAnimationSpritesheet_2: -2128421153
+      Lifeline3DAnimationSpritesheet_20: -1970744248
+      Lifeline3DAnimationSpritesheet_21: -2050698239
+      Lifeline3DAnimationSpritesheet_22: 671044872
+      Lifeline3DAnimationSpritesheet_23: -1923947749
+      Lifeline3DAnimationSpritesheet_24: -364292592
+      Lifeline3DAnimationSpritesheet_25: 398869618
+      Lifeline3DAnimationSpritesheet_26: 440641602
+      Lifeline3DAnimationSpritesheet_27: -945956235
+      Lifeline3DAnimationSpritesheet_28: 1304233591
+      Lifeline3DAnimationSpritesheet_29: -1979323
+      Lifeline3DAnimationSpritesheet_3: 1748208864
+      Lifeline3DAnimationSpritesheet_30: 1539943010
+      Lifeline3DAnimationSpritesheet_31: -540638743
+      Lifeline3DAnimationSpritesheet_32: -102078135
+      Lifeline3DAnimationSpritesheet_33: -1438191188
+      Lifeline3DAnimationSpritesheet_34: 62497656
+      Lifeline3DAnimationSpritesheet_35: 743374620
+      Lifeline3DAnimationSpritesheet_36: -616910988
+      Lifeline3DAnimationSpritesheet_37: 509098611
+      Lifeline3DAnimationSpritesheet_38: 1376906213
+      Lifeline3DAnimationSpritesheet_39: 1840745961
+      Lifeline3DAnimationSpritesheet_4: 390874857
+      Lifeline3DAnimationSpritesheet_40: -1754493593
+      Lifeline3DAnimationSpritesheet_41: 688286487
+      Lifeline3DAnimationSpritesheet_42: -2074113325
+      Lifeline3DAnimationSpritesheet_43: 1930546311
+      Lifeline3DAnimationSpritesheet_44: -1955985098
+      Lifeline3DAnimationSpritesheet_45: -750624438
+      Lifeline3DAnimationSpritesheet_46: -1632324182
+      Lifeline3DAnimationSpritesheet_47: 1271961150
+      Lifeline3DAnimationSpritesheet_48: 1802695716
+      Lifeline3DAnimationSpritesheet_49: -1783268152
+      Lifeline3DAnimationSpritesheet_5: 107183625
+      Lifeline3DAnimationSpritesheet_50: 1281458480
+      Lifeline3DAnimationSpritesheet_51: -568769642
+      Lifeline3DAnimationSpritesheet_52: -1171716833
+      Lifeline3DAnimationSpritesheet_53: -1903285
+      Lifeline3DAnimationSpritesheet_54: -2124732709
+      Lifeline3DAnimationSpritesheet_55: 758620781
+      Lifeline3DAnimationSpritesheet_56: 12434822
+      Lifeline3DAnimationSpritesheet_57: 1349294529
+      Lifeline3DAnimationSpritesheet_58: -1739562727
+      Lifeline3DAnimationSpritesheet_59: -1850795822
+      Lifeline3DAnimationSpritesheet_6: -600066568
+      Lifeline3DAnimationSpritesheet_60: -960116739
+      Lifeline3DAnimationSpritesheet_61: 1224702287
+      Lifeline3DAnimationSpritesheet_62: 311957915
+      Lifeline3DAnimationSpritesheet_63: 1812387266
+      Lifeline3DAnimationSpritesheet_64: 1554974273
+      Lifeline3DAnimationSpritesheet_65: -1717397272
+      Lifeline3DAnimationSpritesheet_66: 615127194
+      Lifeline3DAnimationSpritesheet_67: 495775321
+      Lifeline3DAnimationSpritesheet_68: 1456931921
+      Lifeline3DAnimationSpritesheet_69: -1392864002
+      Lifeline3DAnimationSpritesheet_7: -889770153
+      Lifeline3DAnimationSpritesheet_70: -1666530482
+      Lifeline3DAnimationSpritesheet_71: 260472856
+      Lifeline3DAnimationSpritesheet_72: 1608295158
+      Lifeline3DAnimationSpritesheet_73: 1001948720
+      Lifeline3DAnimationSpritesheet_74: -74004087
+      Lifeline3DAnimationSpritesheet_75: -269563666
+      Lifeline3DAnimationSpritesheet_76: 328362433
+      Lifeline3DAnimationSpritesheet_77: 809653023
+      Lifeline3DAnimationSpritesheet_78: -696400733
+      Lifeline3DAnimationSpritesheet_79: 1239526709
+      Lifeline3DAnimationSpritesheet_8: -772833782
+      Lifeline3DAnimationSpritesheet_80: 1579612265
+      Lifeline3DAnimationSpritesheet_81: 675163871
+      Lifeline3DAnimationSpritesheet_82: 1802201512
+      Lifeline3DAnimationSpritesheet_83: -1440805406
+      Lifeline3DAnimationSpritesheet_84: 207247062
+      Lifeline3DAnimationSpritesheet_85: -2007147514
+      Lifeline3DAnimationSpritesheet_86: -533373185
+      Lifeline3DAnimationSpritesheet_87: -1845459231
+      Lifeline3DAnimationSpritesheet_88: -1240784866
+      Lifeline3DAnimationSpritesheet_89: -426158869
+      Lifeline3DAnimationSpritesheet_9: -150115208
+      Lifeline3DAnimationSpritesheet_90: -619476643
+      Lifeline3DAnimationSpritesheet_91: -752130867
+      Lifeline3DAnimationSpritesheet_92: -2006760854
+      Lifeline3DAnimationSpritesheet_93: 630680986
+      Lifeline3DAnimationSpritesheet_94: -1549533082
+      Lifeline3DAnimationSpritesheet_95: -1826856395
+      Lifeline3DAnimationSpritesheet_96: 1076933375
+      Lifeline3DAnimationSpritesheet_97: -745178543
+      Lifeline3DAnimationSpritesheet_98: 842095138
+      Lifeline3DAnimationSpritesheet_99: 1976322029
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

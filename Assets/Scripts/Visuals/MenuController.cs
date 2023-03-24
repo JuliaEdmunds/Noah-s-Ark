@@ -41,6 +41,10 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Toggle m_2DToggle;
     [SerializeField] private Toggle m_3DToggle;
 
+    [Header("Tutorial")]
+    [SerializeField] private GameObject m_2DTutorial;
+    [SerializeField] private GameObject m_3DTutorial;
+
     [Header("Audio")]
     [SerializeField] private AudioSource m_AudioSource;
 
@@ -75,6 +79,18 @@ public class MenuController : MonoBehaviour
         m_NumLifelinesText.text = $"Number of lifelines: {value}";
 
         UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
+    }
+
+    public void ShowTutorial()
+    {
+        if (GameSettings.GameMode == EGameMode._2D)
+        {
+            m_2DTutorial.SetActive(true);
+        }
+        else
+        {
+            m_3DTutorial.SetActive(true);
+        }
     }
 
     private void UpdateDifficulty(int numAnimals, int numLifelines)
