@@ -11,13 +11,11 @@ public class Animal3D : MonoBehaviour
     // use short => instead of get { ... }
     public GameObject AnimalPrefab => m_AnimalPrefab;
 
-    // TODO: Call this script from VisualController
     public void StartMoving()
     {
         m_AnimationController.StartMoving();
     }
 
-    // TODO: Call this script from VisualController
     public void StopMoving()
     {
         m_AnimationController.StopMoving();

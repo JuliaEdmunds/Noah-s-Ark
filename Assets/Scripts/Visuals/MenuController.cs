@@ -9,6 +9,10 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+    private const string MAIN_2D_SCENE = "Main_2D";
+    private const string MAIN_3D_SCENE = "Main_3D";
+
+
     [Serializable]
     private struct DifficultyNameData
     {
@@ -31,7 +35,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Color m_MaxLevelColour;
     [SerializeField] private List<DifficultyNameData> m_LevelMatcher;
 
-    [Header("Level Grapghs")]
+    [Header("Level Graphs")]
     [SerializeField] private AnimationCurve m_0LifelinesCurve;
     [SerializeField] private AnimationCurve m_1LifelinesCurve;
     [SerializeField] private AnimationCurve m_2LifelinesCurve;
@@ -42,8 +46,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Toggle m_3DToggle;
 
     [Header("Tutorial")]
-    [SerializeField] private GameObject m_2DTutorial;
-    [SerializeField] private GameObject m_3DTutorial;
+    [SerializeField] private PageSwiper m_2DTutorial;
+    [SerializeField] private PageSwiper m_3DTutorial;
 
     [Header("Audio")]
     [SerializeField] private AudioSource m_AudioSource;
@@ -51,6 +55,22 @@ public class MenuController : MonoBehaviour
     private int m_Difficulty = 0;
     private int m_MinAnimals = 2;
     private int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
+
+    private const string BASE_TUTORIAL_PREF_KEY = "NA.Tutorial.HasSeen.";
+    private const string TUTORIAL_2D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "2D";
+    private const string TUTORIAL_3D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "3D";
+
+    private bool Is2DTutorialSeen
+    {
+        get => PlayerPrefs.GetInt(TUTORIAL_2D_PREF_KEY, 0) == 1;
+        set => PlayerPrefs.SetInt(TUTORIAL_2D_PREF_KEY, value ? 1 : 0);
+    }
+    private bool Is3DTutorialSeen
+    {
+        get => PlayerPrefs.GetInt(TUTORIAL_3D_PREF_KEY, 0) == 1;
+        set => PlayerPrefs.SetInt(TUTORIAL_3D_PREF_KEY, value ? 1 : 0);
+    }
+
 
     private void Start()
     {
@@ -85,11 +105,13 @@ public class MenuController : MonoBehaviour
     {
         if (GameSettings.GameMode == EGameMode._2D)
         {
-            m_2DTutorial.SetActive(true);
+            m_2DTutorial.gameObject.SetActive(true);
+            Is2DTutorialSeen = true;
         }
         else
         {
-            m_3DTutorial.SetActive(true);
+            m_3DTutorial.gameObject.SetActive(true);
+            Is3DTutorialSeen = true;
         }
     }
 
@@ -171,12 +193,40 @@ public class MenuController : MonoBehaviour
     {
         if (GameSettings.GameMode == EGameMode._2D)
         {
-            SceneManager.LoadScene(1);
+            if (!Is2DTutorialSeen)
+            {
+                m_2DTutorial.OnTutorialClosed += OnTutorialClosed_2D;
+                ShowTutorial();
+            }
+            else
+            {
+                SceneManager.LoadScene(MAIN_2D_SCENE);
+            }
         }
         else
         {
-            SceneManager.LoadScene(2);
+            if (!Is3DTutorialSeen)
+            {
+                m_3DTutorial.OnTutorialClosed += OnTutorialClosed_3D;
+                ShowTutorial();
+            }
+            else
+            {
+                SceneManager.LoadScene(MAIN_3D_SCENE);
+            }
         }
+    }
+
+    private void OnTutorialClosed_2D()
+    {
+        m_2DTutorial.OnTutorialClosed -= OnTutorialClosed_2D;
+        SceneManager.LoadScene(MAIN_2D_SCENE);
+    }
+
+    private void OnTutorialClosed_3D()
+    {
+        m_3DTutorial.OnTutorialClosed -= OnTutorialClosed_3D;
+        SceneManager.LoadScene(MAIN_3D_SCENE);
     }
 
     public void QuitGame()

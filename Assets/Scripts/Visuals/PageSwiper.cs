@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class PageSwiper : MonoBehaviour
 {
+    public event Action OnTutorialClosed;
+
     [Serializable]
     private struct PanelData
     {
@@ -62,5 +64,7 @@ public class PageSwiper : MonoBehaviour
         m_CurrentPanelIndex = 0;
 
         gameObject.SetActive(false);
+
+        OnTutorialClosed();
     }
 }
