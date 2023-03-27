@@ -4044,6 +4044,10 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 9204441}
+    - target: {fileID: 3519481794133245993, guid: 5c33a695a23a06e4bbfa43a43ec1cc87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -747063064, guid: 15808dac3ed4778499d1be62b103986a, type: 3}
     - target: {fileID: 3519481794241838013, guid: 5c33a695a23a06e4bbfa43a43ec1cc87, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -4065,9 +4069,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9282090}
     m_Modifications:
+    - target: {fileID: 4302455133610359482, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4302455134202345920, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
       propertyPath: m_Name
       value: 3D Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302455134202345920, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302455134202345921, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
       propertyPath: m_Pivot.x
@@ -4153,9 +4165,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302455134522730632, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302455134608027313, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1758586217, guid: f3aeb3d7ce4e2414b8143fcff611dd45, type: 3}
     - target: {fileID: 4302455134608027314, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302455134844062041, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
