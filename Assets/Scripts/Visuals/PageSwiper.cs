@@ -65,6 +65,6 @@ public class PageSwiper : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        OnTutorialClosed();
+        OnTutorialClosed?.Invoke();
     }
 }
