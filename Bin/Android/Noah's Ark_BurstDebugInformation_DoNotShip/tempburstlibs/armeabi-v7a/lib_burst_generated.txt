@@ -137,6 +137,7 @@ Library: lib_burst_generated
 --compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
+--compilation-defines=VISUAL_SCRIPTING_ENABLED
 --generate-link-xml=Temp\burst.link.xml
 --debug=Full
 --output=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
@@ -157,6 +158,10 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
+--root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Unity.AdaptivePerformance.dll
+--root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Unity.Notifications.Android.dll
+--root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Unity.Profiling.Core.dll
+--root-assembly=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\Unity.Subsystem.Registration.dll
 --assembly-folder=C:\Users\julia\Desktop\Personal Projects\Create with Code\Noah's Ark\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
