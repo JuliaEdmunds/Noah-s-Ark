@@ -21,6 +21,7 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] private List<GameObject> m_GameOnButtons;
     [SerializeField] GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
+    [SerializeField] private Color m_WinColor;
 
     [Header("Lifeline")]
     [SerializeField] private TextMeshProUGUI m_LifelineText;
@@ -193,6 +194,7 @@ public class VisualController_2D : MonoBehaviour
         m_AudioSource.PlayOneShot(m_GameWonSound, 1);
 
         m_GameOverText.text = "All animals on board. Congrats!";
+        m_GameOverText.color = m_WinColor;
 
         foreach (var button in m_GameOnButtons)
         {

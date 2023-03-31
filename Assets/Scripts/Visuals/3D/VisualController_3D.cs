@@ -15,10 +15,12 @@ using UnityEngine.UI;
 public class VisualController_3D : MonoBehaviour
 {
     [Header("Main Objects")]
-    [SerializeField] private GameObject m_Forest;
+    [SerializeField] private GameObject m_ForestZone;
     [SerializeField] private GameObject m_ForestEntry;
-    [SerializeField] private GameObject m_Ship;
+    [SerializeField] private GameObject m_ShipObject;
+    [SerializeField] private GameObject m_ShipZone;
     [SerializeField] private GameObject m_ShipEntry;
+    [SerializeField] private GameObject m_ShipExit;
     [SerializeField] private GameObject m_AnimalShowPos;
     [SerializeField] private Material m_SunnySkybox;
     [SerializeField] private ParticleSystem m_ShipParticles;
@@ -29,9 +31,12 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField] private Vector3 m_SpawnPos;
     [SerializeField, Range(0.1f, 5f)] private float m_MoveSpeed;
 
-    [SerializeField, Header("UI")] private TextMeshPro m_AnimalText;
+    [Header("UI")]
+    [SerializeField] private GameObject m_BackToMenuButton;
+    [SerializeField] private TextMeshPro m_AnimalText;
     [SerializeField] private GameObject m_GameOverScreen;
     [SerializeField] private TextMeshProUGUI m_GameOverText;
+    [SerializeField] private Color m_WinColor;
 
     [Header("Lifeline")]
     [SerializeField] private GameObject m_AnimalsOnBoardScreen;
@@ -124,9 +129,9 @@ public class VisualController_3D : MonoBehaviour
 
         m_NumLifelinesLeft--;
         m_LifelineText.text = $"{m_NumLifelinesLeft}";
-        m_Ship.SetActive(false);
+        m_ShipZone.SetActive(false);
         StartCoroutine(ShowAnimalsOnBoard());
-        m_Ship.SetActive(true);
+        m_ShipZone.SetActive(true);
 
         if (m_NumLifelinesLeft < 1)
         {
@@ -166,9 +171,30 @@ public class VisualController_3D : MonoBehaviour
         m_AudioSource.Stop();
         m_AudioSource.PlayOneShot(m_WonGameSound, 1);
         TurnOffClickables();
+        StartCoroutine(MoveShip());
         RenderSettings.skybox = m_SunnySkybox;
         m_GameOverText.text = "All animals on board. Congrats!";
+        m_GameOverText.color = m_WinColor;
         m_GameOverScreen.SetActive(true);
+    }
+
+    private IEnumerator MoveShip()
+    {
+        float duration = 2.5f;
+        float timeElapsed = 0;
+
+        Vector3 startPos = m_ShipObject.transform.position;
+        Vector3 targetPos = m_ShipExit.transform.position;
+
+        m_ShipObject.transform.LookAt(targetPos);
+
+        while (timeElapsed < duration)
+        {
+            m_ShipObject.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;  
+        }
     }
 
     private IEnumerator SpawnAnimal(AnimalData animal)
@@ -207,7 +233,6 @@ public class VisualController_3D : MonoBehaviour
 
         animal.StopMoving();
 
-        // TODO: Add VFX of animal disappearing
         if (shouldDestroy)
         {
             if (entryPoint == m_ForestEntry)
@@ -240,22 +265,22 @@ public class VisualController_3D : MonoBehaviour
         m_MainCamera.Priority = 1;
         m_ShipCameraOne.Priority = 10;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         m_ShipCameraOne.Priority = 1;
         m_ShipCameraTwo.Priority = 10;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         m_ShipCameraTwo.Priority = 1;
         m_ShipCameraThree.Priority = 10;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
 
         m_MainCamera.Priority = 10;
         m_ShipCameraThree.Priority = 1;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
 
         m_AnimalsOnBoardScreen.SetActive(false);
     }
@@ -263,8 +288,10 @@ public class VisualController_3D : MonoBehaviour
     private void TurnOffClickables()
     {
         m_Lifeline.SetActive(false);
-        m_Ship.SetActive(false);
-        m_Forest.SetActive(false);
+        m_ShipZone.SetActive(false);
+        m_ForestZone.SetActive(false);
+        m_BackToMenuButton.SetActive(false);
+
         StopAllCoroutines();
     }
 
