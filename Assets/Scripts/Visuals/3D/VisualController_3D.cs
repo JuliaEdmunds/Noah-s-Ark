@@ -129,9 +129,7 @@ public class VisualController_3D : MonoBehaviour
 
         m_NumLifelinesLeft--;
         m_LifelineText.text = $"{m_NumLifelinesLeft}";
-        m_ShipZone.SetActive(false);
         StartCoroutine(ShowAnimalsOnBoard());
-        m_ShipZone.SetActive(true);
 
         if (m_NumLifelinesLeft < 1)
         {
@@ -252,6 +250,7 @@ public class VisualController_3D : MonoBehaviour
 
     private IEnumerator ShowAnimalsOnBoard()
     {
+        m_ShipZone.SetActive(false);
         m_AnimalsOnBoardScreen.SetActive(true);
 
         foreach (var animal in m_AllAnimalsOnBoard)
@@ -281,6 +280,8 @@ public class VisualController_3D : MonoBehaviour
         m_ShipCameraThree.Priority = 1;
 
         yield return new WaitForSeconds(2.5f);
+
+        m_ShipZone.SetActive(true);
 
         m_AnimalsOnBoardScreen.SetActive(false);
     }

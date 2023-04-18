@@ -8,7 +8,6 @@ using static Unity.VisualScripting.Member;
 
 public class GameLogic
 {
-    // Game over, game won should also be events
     public event Action<AnimalData> OnNewAnimalAppears;
     public event Action<AnimalData> OnAnimalCorrect;
     public event Action<AnimalData> OnGameOver;
