@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour
     [Serializable]
     private struct DifficultyNameData
     {
-        [Range(0f, 1f)]public float MinPercentageNeeded;
+        [Range(0f, 1f)] public float MinPercentageNeeded;
         public string DifficultyName;
     }
 
@@ -26,6 +26,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Slider m_NumLifelines;
     [SerializeField] private TextMeshProUGUI m_NumAnimalsText;
     [SerializeField] private TextMeshProUGUI m_NumLifelinesText;
+
+    [Header("Buttons")]
+    [SerializeField] private GameObject m_ExitButton;
 
     [Header("Levelometer")]
     [SerializeField] private TextMeshProUGUI m_DifficultyText;
@@ -74,6 +77,13 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+        const bool IS_EXIT_BUTTON_VISIBLE = true;
+#else
+        const bool IS_EXIT_BUTTON_VISIBLE = false;
+#endif
+
+        m_ExitButton.SetActive(IS_EXIT_BUTTON_VISIBLE);
         LoadDifficulty();
 
         m_NumAnimalsText.text = $"Number of animals: {GameSettings.NumAnimals}";
