@@ -123,6 +123,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9011186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1407448802, guid: 5c33a695a23a06e4bbfa43a43ec1cc87, type: 3}
+  m_PrefabInstance: {fileID: 3519481792743469514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &9011188 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 1407448804, guid: 5c33a695a23a06e4bbfa43a43ec1cc87, type: 3}
+  m_PrefabInstance: {fileID: 3519481792743469514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9011189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f43249bf59672241b59c027792ff555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VideoName: Lifeline2D
+  m_VideoPlayer: {fileID: 9011188}
 --- !u!1 &9204438
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1013,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &303242616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 606165593033253543, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+  m_PrefabInstance: {fileID: 4099613978152733186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &303242618 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 1090240371208293902, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+  m_PrefabInstance: {fileID: 4099613978152733186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &303242619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303242616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f43249bf59672241b59c027792ff555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VideoName: Play3D
+  m_VideoPlayer: {fileID: 303242618}
 --- !u!1 &318124484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1403,30 @@ RectTransform:
   m_AnchoredPosition: {x: -75, y: 0}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!1 &491576777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1114659890077863902, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+  m_PrefabInstance: {fileID: 4099613978152733186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &491576779 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 5788444476725318462, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+  m_PrefabInstance: {fileID: 4099613978152733186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &491576780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491576777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f43249bf59672241b59c027792ff555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VideoName: Lifeline3D
+  m_VideoPlayer: {fileID: 491576779}
 --- !u!1 &542551469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4730,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9282090}
     m_Modifications:
+    - target: {fileID: 1407448804, guid: 5c33a695a23a06e4bbfa43a43ec1cc87, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3519481792387487576, guid: 5c33a695a23a06e4bbfa43a43ec1cc87, type: 3}
       propertyPath: m_Name
       value: 2D Tutorial
@@ -4820,6 +4896,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9282090}
     m_Modifications:
+    - target: {fileID: 1090240371208293902, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4302455133465985977, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
       propertyPath: m_Type
       value: 0
@@ -4942,6 +5022,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302455134202345921, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302455134844062041, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788444476725318462, guid: 26bd3b60bedf30a4780f3c8099898151, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
