@@ -120,6 +120,11 @@ public class VisualController_3D : MonoBehaviour
 
     public void GetHelp()
     {
+        if (m_CurrentAnimal == null)
+        {
+            return;
+        }
+
         if (m_NumLifelinesLeft < 1)
         {
             m_Lifeline.SetActive(false);
