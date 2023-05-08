@@ -60,6 +60,9 @@ public class VisualController_3D : MonoBehaviour
     private int m_NumLifelinesLeft;
     private Animal3D m_CurrentAnimal;
 
+    private const string MAIN_3D_SCENE = "Main_3D";
+    private const string MENU_SCENE = "Menu";
+
 
     void Start()
     {
@@ -303,12 +306,12 @@ public class VisualController_3D : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(MENU_SCENE);
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(MAIN_3D_SCENE);
     }
 
     public void QuitGame()

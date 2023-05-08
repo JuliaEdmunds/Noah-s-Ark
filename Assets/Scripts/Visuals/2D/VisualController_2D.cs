@@ -40,6 +40,9 @@ public class VisualController_2D : MonoBehaviour
     private Dictionary<EAnimal, AnimalSlotsUI> m_AnimalPairsDict = new();
     private int m_NumLifelinesLeft;
 
+    private const string MAIN_2D_SCENE = "Main_2D";
+    private const string MENU_SCENE = "Menu";
+
     void Start()
     {
         m_AudioSource.Play();
@@ -207,12 +210,12 @@ public class VisualController_2D : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(MENU_SCENE);
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(MAIN_2D_SCENE);
     }
 
     public void QuitGame()
