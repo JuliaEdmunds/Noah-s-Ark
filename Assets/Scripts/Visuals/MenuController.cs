@@ -81,9 +81,13 @@ public class MenuController : MonoBehaviour
     {
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         const bool IS_EXIT_BUTTON_VISIBLE = true;
-        const bool IS_VOLUME_BUTTON_VISIBLE = true;
 #else
         const bool IS_EXIT_BUTTON_VISIBLE = false;
+#endif
+
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR || UNITY_WEBGL
+        const bool IS_VOLUME_BUTTON_VISIBLE = true;
+#else
         const bool IS_VOLUME_BUTTON_VISIBLE = false;
 #endif
 
