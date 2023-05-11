@@ -1,16 +1,10 @@
 using Cinemachine;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class VisualController_3D : MonoBehaviour
 {
@@ -97,28 +91,22 @@ public class VisualController_3D : MonoBehaviour
 
     public void AcceptAnimal()
     {
-        bool shouldDestroy = true;
-
         if (m_CurrentAnimal == null)
         {
             return;
         }
 
-        m_GameLogic.AcceptAnimal();
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, m_ShipEntry, shouldDestroy));
+        StartCoroutine(DoAcceptOrDeclineAnimal(true));
     }
 
     public void DeclineAnimal()
     {
-        bool shouldDestroy = true;
-
         if (m_CurrentAnimal == null)
         {
             return;
         }
 
-        m_GameLogic.DeclineAnimal();
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, m_ForestEntry, shouldDestroy));
+        StartCoroutine(DoAcceptOrDeclineAnimal(false));
     }
 
     public void GetHelp()
@@ -199,7 +187,7 @@ public class VisualController_3D : MonoBehaviour
             m_ShipObject.transform.position = Vector3.Lerp(startPos, targetPos, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
 
-            yield return null;  
+            yield return null;
         }
     }
 
@@ -208,17 +196,40 @@ public class VisualController_3D : MonoBehaviour
         Animal3D currentAnimalData = m_AnimalDataPrefabDict[animal];
         GameObject currentPrefab = currentAnimalData.AnimalPrefab;
 
-        // Fow nor instantiate straight at presentable position
         yield return new WaitForSeconds(1.5f);
         m_AnimalText.gameObject.SetActive(true);
         m_AnimalText.text = $"{animal.Gender} {animal.AnimalType}";
         GameObject animalGameObject = Instantiate(currentPrefab, m_SpawnPos, Quaternion.LookRotation(currentPrefab.transform.forward, Vector3.up));
-        m_CurrentAnimal = animalGameObject.GetComponent<Animal3D>();
+        Animal3D animalToSpawn = animalGameObject.GetComponent<Animal3D>();
 
-        StartCoroutine(MoveAnimal(m_CurrentAnimal, m_AnimalShowPos, false));
+        yield return MoveAnimal(animalToSpawn, m_AnimalShowPos);
+
+        m_CurrentAnimal = animalToSpawn;
     }
 
-    private IEnumerator MoveAnimal(Animal3D animal, GameObject entryPoint, bool shouldDestroy)
+    private IEnumerator DoAcceptOrDeclineAnimal(bool isAccepting)
+    {
+        Animal3D currentAnimal = m_CurrentAnimal;
+        m_CurrentAnimal = null;
+        GameObject entryPoint = isAccepting ? m_ShipEntry : m_ForestEntry;
+        yield return MoveAnimal(currentAnimal, entryPoint);
+
+        m_AnimalText.gameObject.SetActive(false);
+        Destroy(currentAnimal.gameObject);
+
+        if (isAccepting)
+        {
+            m_ShipParticles.Play();
+            m_GameLogic.AcceptAnimal();
+        }
+        else
+        {
+            m_ForestParticles.Play();
+            m_GameLogic.DeclineAnimal();
+        }
+    }
+
+    private IEnumerator MoveAnimal(Animal3D animal, GameObject entryPoint)
     {
         float duration = 0.5f;
         float timeElapsed = 0;
@@ -238,22 +249,6 @@ public class VisualController_3D : MonoBehaviour
         }
 
         animal.StopMoving();
-
-        if (shouldDestroy)
-        {
-            if (entryPoint == m_ForestEntry)
-            {
-                m_ForestParticles.Play();
-            }
-            else
-            {
-                m_ShipParticles.Play();
-            }
-
-            m_AnimalText.gameObject.SetActive(false);
-            Destroy(animal.gameObject);
-            m_CurrentAnimal = null;
-        }        
     }
 
     private IEnumerator ShowAnimalsOnBoard()
