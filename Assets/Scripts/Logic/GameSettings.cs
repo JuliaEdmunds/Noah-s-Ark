@@ -11,4 +11,6 @@ public static class GameSettings
     public static int NumLifelines = 1;
 
     public static EGameMode GameMode = EGameMode._3D;
+
+    public static EVolume Volume = EVolume.Full;
 }

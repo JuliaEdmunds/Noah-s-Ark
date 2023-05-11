@@ -56,7 +56,7 @@ public class MenuController : MonoBehaviour
     private int m_Difficulty = 0;
     private int m_MinAnimals = 2;
     private int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
-    private EVolume m_CurrentVolume = EVolume.Full;
+    private EVolume m_CurrentVolume;
 
     private const string BASE_TUTORIAL_PREF_KEY = "NA.Tutorial.HasSeen.";
     private const string TUTORIAL_2D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "2D";
@@ -96,6 +96,7 @@ public class MenuController : MonoBehaviour
 
         UpdateDifficulty(GameSettings.NumAnimals, GameSettings.NumLifelines);
         m_AudioSource.Play();
+        ChangeVolumeIcon();
     }
 
     public void OnAnimalSliderChanged(float value)
@@ -246,20 +247,20 @@ public class MenuController : MonoBehaviour
 
     public void ChangeVolume()
     {
-        if (m_CurrentVolume == EVolume.Full)
+        if (GameSettings.Volume == EVolume.Full)
         {
-            m_AudioSource.volume = 0.5f;
-            m_CurrentVolume = EVolume.Half;
+            AudioListener.volume = 0.5f;
+            GameSettings.Volume = EVolume.Half;
         }
-        else if (m_CurrentVolume == EVolume.Half)
+        else if (GameSettings.Volume == EVolume.Half)
         {
-            m_AudioSource.volume = 0f;
-            m_CurrentVolume = EVolume.Mute;
+            AudioListener.volume = 0f;
+            GameSettings.Volume = EVolume.Mute;
         }
         else
         {
-            m_AudioSource.volume = 1f;
-            m_CurrentVolume = EVolume.Full;   
+            AudioListener.volume = 1f;
+            GameSettings.Volume = EVolume.Full;   
         }
 
         ChangeVolumeIcon();
@@ -271,7 +272,7 @@ public class MenuController : MonoBehaviour
         {
             VolumeSettings currentSetting = m_VolumeSettings[i];
             EVolume currentSettingsVolume = currentSetting.VolumeLevel;
-            currentSetting.gameObject.SetActive(currentSettingsVolume == m_CurrentVolume);
+            currentSetting.gameObject.SetActive(currentSettingsVolume == GameSettings.Volume);
         }
     }
 
