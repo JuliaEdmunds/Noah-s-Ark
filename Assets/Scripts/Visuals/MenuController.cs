@@ -9,10 +9,6 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    private const string MAIN_2D_SCENE = "Main_2D";
-    private const string MAIN_3D_SCENE = "Main_3D";
-
-
     [Serializable]
     private struct DifficultyNameData
     {
@@ -54,14 +50,20 @@ public class MenuController : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private GameObject m_VolumeSettingsButton;
+    [SerializeField] private List<VolumeSettings> m_VolumeSettings;
 
     private int m_Difficulty = 0;
     private int m_MinAnimals = 2;
     private int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
+    private EVolume m_CurrentVolume = EVolume.Full;
 
     private const string BASE_TUTORIAL_PREF_KEY = "NA.Tutorial.HasSeen.";
     private const string TUTORIAL_2D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "2D";
     private const string TUTORIAL_3D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "3D";
+
+    private const string MAIN_2D_SCENE = "Main_2D";
+    private const string MAIN_3D_SCENE = "Main_3D";
 
     private bool Is2DTutorialSeen
     {
@@ -79,11 +81,14 @@ public class MenuController : MonoBehaviour
     {
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         const bool IS_EXIT_BUTTON_VISIBLE = true;
+        const bool IS_VOLUME_BUTTON_VISIBLE = true;
 #else
         const bool IS_EXIT_BUTTON_VISIBLE = false;
+        const bool IS_VOLUME_BUTTON_VISIBLE = false;
 #endif
 
         m_ExitButton.SetActive(IS_EXIT_BUTTON_VISIBLE);
+        m_VolumeSettingsButton.SetActive(IS_VOLUME_BUTTON_VISIBLE);
         LoadDifficulty();
 
         m_NumAnimalsText.text = $"Number of animals: {GameSettings.NumAnimals}";
@@ -237,6 +242,37 @@ public class MenuController : MonoBehaviour
     {
         m_3DTutorial.OnTutorialClosed -= OnTutorialClosed_3D;
         SceneManager.LoadScene(MAIN_3D_SCENE);
+    }
+
+    public void ChangeVolume()
+    {
+        if (m_CurrentVolume == EVolume.Full)
+        {
+            m_AudioSource.volume = 0.5f;
+            m_CurrentVolume = EVolume.Half;
+        }
+        else if (m_CurrentVolume == EVolume.Half)
+        {
+            m_AudioSource.volume = 0f;
+            m_CurrentVolume = EVolume.Mute;
+        }
+        else
+        {
+            m_AudioSource.volume = 1f;
+            m_CurrentVolume = EVolume.Full;   
+        }
+
+        ChangeVolumeIcon();
+    }
+
+    private void ChangeVolumeIcon()
+    {
+        for (int i = 0; i < m_VolumeSettings.Count; i++)
+        {
+            VolumeSettings currentSetting = m_VolumeSettings[i];
+            EVolume currentSettingsVolume = currentSetting.VolumeLevel;
+            currentSetting.gameObject.SetActive(currentSettingsVolume == m_CurrentVolume);
+        }
     }
 
     public void QuitGame()
