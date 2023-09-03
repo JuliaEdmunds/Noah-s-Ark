@@ -1,5 +1,5 @@
 # Noah's Ark
-Final project for the [Unity Junior Programmer Pathway](https://learn.unity.com/pathway/junior-programmer) and the 1st ever published game.
+Final project for the [Unity Junior Programmer Pathway](https://learn.unity.com/pathway/junior-programmer) and my 1st ever published game.
 
 ## Project goal
 The aim of this project was to create an end-to-end game, publish it and learn/practice how to decouple logic and visuals.
