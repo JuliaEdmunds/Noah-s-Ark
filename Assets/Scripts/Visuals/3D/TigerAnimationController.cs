@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-public class TigerAnimationController : AAnimalAnimationController
+﻿public class TigerAnimationController : AAnimalAnimationController
 {
     public override void StartMoving()
     {
@@ -17,4 +10,3 @@ public class TigerAnimationController : AAnimalAnimationController
         m_Animator.SetFloat("Speed_f", 0f);
     }
 }
-

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-public class MostAnimalsAnimationController : AAnimalAnimationController
+﻿public class MostAnimalsAnimationController : AAnimalAnimationController
 {
     public override void StartMoving()
     {
@@ -19,4 +12,3 @@ public class MostAnimalsAnimationController : AAnimalAnimationController
         m_Animator.SetBool("Eat_b", true);
     }
 }
-

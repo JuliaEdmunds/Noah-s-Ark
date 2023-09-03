@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
@@ -15,7 +14,6 @@ public class MenuController : MonoBehaviour
         [Range(0f, 1f)] public float MinPercentageNeeded;
         public string DifficultyName;
     }
-
 
     [Header("Sliders")]
     [SerializeField] private Slider m_NumAnimals;
@@ -56,7 +54,6 @@ public class MenuController : MonoBehaviour
     private int m_Difficulty = 0;
     private int m_MinAnimals = 2;
     private int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
-    private EVolume m_CurrentVolume;
 
     private const string BASE_TUTORIAL_PREF_KEY = "NA.Tutorial.HasSeen.";
     private const string TUTORIAL_2D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "2D";
@@ -75,7 +72,6 @@ public class MenuController : MonoBehaviour
         get => PlayerPrefs.GetInt(TUTORIAL_3D_PREF_KEY, 0) == 1;
         set => PlayerPrefs.SetInt(TUTORIAL_3D_PREF_KEY, value ? 1 : 0);
     }
-
 
     private void Start()
     {
@@ -251,22 +247,33 @@ public class MenuController : MonoBehaviour
 
     public void ChangeVolume()
     {
-        if (GameSettings.Volume == EVolume.Full)
+        int newVolumeAsInt = (int)GameSettings.Volume + 1;
+
+        if (newVolumeAsInt > (int)EVolume.Mute)
         {
-            AudioListener.volume = 0.5f;
-            GameSettings.Volume = EVolume.Half;
-        }
-        else if (GameSettings.Volume == EVolume.Half)
-        {
-            AudioListener.volume = 0f;
-            GameSettings.Volume = EVolume.Mute;
-        }
-        else
-        {
-            AudioListener.volume = 1f;
-            GameSettings.Volume = EVolume.Full;   
+            newVolumeAsInt = 0;
         }
 
+        SetVolume((EVolume)newVolumeAsInt);
+    }
+
+    private void SetVolume(EVolume volume)
+    {
+        switch (volume)
+        {
+            default:
+            case EVolume.Full:
+                AudioListener.volume = 1f;
+                break;
+            case EVolume.Half:
+                AudioListener.volume = 0.5f;
+                break;
+            case EVolume.Mute:
+                AudioListener.volume = 0f;
+                break;
+        }
+
+        GameSettings.Volume = volume;
         ChangeVolumeIcon();
     }
 
