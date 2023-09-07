@@ -6,7 +6,6 @@ public class LogoScreenController : MonoBehaviour
 {
     private const string MENU_SCENE = "Menu";
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(LoadMenu());

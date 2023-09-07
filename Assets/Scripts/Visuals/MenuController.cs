@@ -52,8 +52,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private List<VolumeSettings> m_VolumeSettings;
 
     private int m_Difficulty = 0;
-    private int m_MinAnimals = 2;
-    private int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
+    private readonly int m_MinAnimals = 2;
+    private readonly int m_MaxAnimals = Enum.GetNames(typeof(EAnimal)).Length;
 
     private const string BASE_TUTORIAL_PREF_KEY = "NA.Tutorial.HasSeen.";
     private const string TUTORIAL_2D_PREF_KEY = BASE_TUTORIAL_PREF_KEY + "2D";

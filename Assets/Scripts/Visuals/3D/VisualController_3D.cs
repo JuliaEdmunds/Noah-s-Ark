@@ -50,7 +50,7 @@ public class VisualController_3D : MonoBehaviour
     [SerializeField] private AudioClip m_LostGameSound;
     [SerializeField] private AudioClip m_AnimalCorrectSound;
 
-    private GameLogic m_GameLogic = new();
+    private readonly GameLogic m_GameLogic = new();
     private int m_NumLifelinesLeft;
     private Animal3D m_CurrentAnimal;
 

@@ -15,12 +15,12 @@ public class PageSwiper : MonoBehaviour
 
     [SerializeField] private List<PanelData> m_PanelData;
 
+    private const int MAX_PANEL_INDEX = 2;
     private int m_CurrentPanelIndex = 0;
-    private int m_MaxPanelIndex = 2;
 
     public void ForwardClick()
     {
-        if (m_CurrentPanelIndex >= m_MaxPanelIndex)
+        if (m_CurrentPanelIndex >= MAX_PANEL_INDEX)
         {
             return;
         }

@@ -32,8 +32,8 @@ public class VisualController_2D : MonoBehaviour
     [SerializeField] private AudioClip m_GameLostSound;
     [SerializeField] private AudioClip m_GameWonSound;
 
-    private GameLogic m_GameLogic = new();
-    private Dictionary<EAnimal, AnimalSlotsUI> m_AnimalPairsDict = new();
+    private readonly GameLogic m_GameLogic = new();
+    private readonly Dictionary<EAnimal, AnimalSlotsUI> m_AnimalPairsDict = new();
     private int m_NumLifelinesLeft;
 
     private const string MAIN_2D_SCENE = "Main_2D";
